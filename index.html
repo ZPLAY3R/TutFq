@@ -420,14 +420,14 @@
             <div class="toc">
                 <h3>Quick Navigation</h3>
                 <ul>
+                    <li><a href="#installation">Installation Guide</a></li>
+                    <li><a href="#deepseek-api">DeepSeek API Setup</a></li>
+                    <li><a href="#tts-guide">Text-to-Speech (TTS)</a></li>
                     <li><a href="#multi-npc">Multiple NPC Conversations</a></li>
                     <li><a href="#chatsync">ChatSync Mod Integration</a></li>
-                    <li><a href="#deepseek-api">DeepSeek API Setup</a></li>
                     <li><a href="#asterisk-rp">Asterisk Roleplay Guide</a></li>
-                    <li><a href="#tts-guide">Text-to-Speech (TTS)</a></li>
                     <li><a href="#rollback-ai">Rollback AI Actions</a></li>
                     <li><a href="#json-editing">Editing NPC .JSON Files</a></li>
-                    <li><a href="#installation">Installation Guide</a></li>
                     <li><a href="#faq">Frequently Asked Questions</a></li>
                     <li><a href="#troubleshooting">Troubleshooting</a></li>
                     <li><a href="#diplomacy">Diplomacy System</a></li>
@@ -436,6 +436,224 @@
         </div>
         
         <div class="divider"></div>
+        
+        <!-- Installation Guide -->
+        <div class="section" id="installation">
+            <h2 class="section-title"><span class="icon">📦</span> Installation Guide</h2>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">⚙️</span> How to Install AI Influence</h3>
+                
+                <div class="step">
+                    <strong>Step 1: Download Latest Version</strong>
+                    <p>Get the mod from:</p>
+                    <ul>
+                        <li><strong>Discord:</strong> ⁠🆙┃influence-updates channel</li>
+                        <li><strong>Steam Workshop:</strong> <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3584621421" target="_blank">Steam Link</a></li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <strong>Step 2: Extract to Modules Folder</strong>
+                    <div class="code-block">
+Mount & Blade II Bannerlord/Modules
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <strong>Step 3: Required Dependencies</strong>
+                    <ul>
+                        <li>Harmony</li>
+                        <li>ButterLib</li>
+                        <li>UIExtenderEx</li>
+                        <li>Mod Configuration Menu (MCM)</li>
+                    </ul>
+                    <div class="warning">
+                        <strong>⚠️ These mods must be ABOVE AIInfluence in load order!</strong>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <strong>Step 4: Load Order Example</strong>
+                    <div class="code-block">
+1) Harmony
+2) ButterLib
+3) UIExtenderEx
+4) MCM
+5) AIInfluence ✅
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <strong>Step 5: Supported Versions</strong>
+                    <p>Bannerlord 1.3.9 - 1.3.13</p>
+                </div>
+            </div>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">🆓</span> Free Local AI - Player2 Setup</h3>
+                
+                <div class="step">
+                    <strong>1. Download Player2:</strong>
+                    <p><a href="https://player2.game/" target="_blank">https://player2.game/</a></p>
+                </div>
+                
+                <div class="step">
+                    <strong>2. Run Player2.exe:</strong>
+                    <p>Local server starts automatically at: <code>http://localhost:4315/</code></p>
+                </div>
+                
+                <div class="step">
+                    <strong>3. Configure in Bannerlord:</strong>
+                    <p>MCM → AIInfluence → Settings:</p>
+                    <ul>
+                        <li>AI Backend: Player2</li>
+                        <li>URL: <code>http://localhost:4315/</code></li>
+                        <li>API Key: leave empty ✅</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">🌐</span> Other Supported AI Providers</h3>
+                
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3><span class="icon">⭐</span> OpenRouter</h3>
+                        <p>GPT-4, Claude, Gemini, etc.</p>
+                        <p><strong>✅ Best quality, requires API key</strong></p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3><span class="icon">💻</span> Ollama</h3>
+                        <p>Local LLMs</p>
+                        <p><strong>✅ Free & offline, supports many models</strong></p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3><span class="icon">🖥️</span> KoboldCpp</h3>
+                        <p>Local AI chat models</p>
+                        <p><strong>✅ Good for lower-end PCs</strong></p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <strong>How to Switch Models:</strong>
+                    <p>MCM → AI Backend → Select provider → Enter API URL and Key if required</p>
+                    <p class="success"><strong>Tip:</strong> Better AI models = smarter characters</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- DeepSeek API Guide -->
+        <div class="section" id="deepseek-api">
+            <h2 class="section-title"><span class="icon">🔌</span> DeepSeek API Setup</h2>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">🌐</span> How to Use DeepSeek API with AI Influence</h3>
+                
+                <div class="step">
+                    <strong>Step 1: Create Account</strong>
+                    <p>Go to <a href="https://platform.deepseek.com" target="_blank">platform.deepseek.com</a> and create an account.</p>
+                </div>
+                
+                <div class="step">
+                    <strong>Step 2: Top Up API Funds</strong>
+                    <p>Add funds to your API account for usage.</p>
+                </div>
+                
+                <div class="step">
+                    <strong>Step 3: Generate API Key</strong>
+                    <p>Navigate to API Keys section and create a new API key.</p>
+                    <div class="warning">
+                        <strong>Warning:</strong> Save your API key immediately as you can only view it once. Never share it with others unless you intend to.
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <strong>Step 4: Configure in Game</strong>
+                    <p>In Bannerlord's MCM → AI Influence settings:</p>
+                    <ol>
+                        <li>Select DeepSeek as AI backend</li>
+                        <li>Enter your API key</li>
+                        <li>Configure URL if required</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Text-to-Speech Guide -->
+        <div class="section" id="tts-guide">
+            <h2 class="section-title"><span class="icon">🔊</span> Text-to-Speech (TTS) Guide</h2>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">🎙️</span> Player2 TTS System</h3>
+                
+                <div class="step">
+                    <strong>What TTS Does:</strong>
+                    <p>Player2's TTS system generates natural-sounding AI voices for every NPC in Bannerlord, replacing limited single-line voice acting with fully voiced dynamic conversations.</p>
+                </div>
+                
+                <div class="step">
+                    <strong>Enabling TTS:</strong>
+                    <ol>
+                        <li><strong>Step 1:</strong> Open Player2 and ensure the top-right corner slider is ON</li>
+                        <li><strong>Step 2:</strong> In Bannerlord → Mod Options → AI Influence → Scroll to Player2 Settings</li>
+                        <li><strong>Step 3:</strong> TTS is now enabled</li>
+                    </ol>
+                </div>
+                
+                <div class="step">
+                    <strong>TTS Voice Assignment:</strong>
+                    <div class="code-block">
+MALE VOICES:
+01955d76-ed5b-74ba-89e5-2b4b45e632cd - Benjamin (en_US)
+01955d76-ed5b-74de-83e5-800a44fee0d1 - Caleb (en_US)
+01955d76-ed5b-7566-9c0e-bce4d88ceba0 - Charles (en_US)
+01955d76-ed5b-748c-8d98-0fb708ef0fbd - Ethan (en_US)
+01955d76-ed5b-754f-a070-a570ddfed516 - Harry (en_US)
+01955d76-ed5b-74d2-a33c-b2b8e998658f - Jackson (en_US)
+01955d76-ed5b-74af-a2be-9302077075b8 - Logan (en_US)
+01955d76-ed5b-74c6-ac15-ab68ee19d560 - Lucas (en_US)
+01955d76-ed5b-74a3-9129-c3253d01f690 - Mason (en_US)
+01955d76-ed5b-74e9-9fea-1f8cad1cd9c5 - Nicholas (en_US)
+01955d76-ed5b-7497-9f8e-0e7448515bf3 - Noah (en_US)
+01955d76-ed5b-753f-9f74-c0674216f0f5 - Oliver (en_US)
+01955d76-ed5b-755b-9b43-890d73586908 - William (en_US)
+
+FEMALE VOICES:
+01955d76-ed5b-7468-83a7-bfc267cf4849 - Abigail (en_US)
+01955d76-ed5b-7441-a184-5f5ee015e4fe - Amelia (en_US)
+01955d76-ed5b-7534-b7a6-028adcfb4e7d - Amelia (en_US)
+01955d76-ed5b-7436-a182-c4d21aaca9fc - Ava (en_US)
+01955d76-ed5b-7451-92d6-5ef579d3ed28 - Charlotte (en_US)
+01955d76-ed5b-7480-951c-af1dd9873e34 - Chloe (en_US)
+01955d76-ed5b-74f9-b54a-2d051890468d - Eleanor (en_US)
+01955d76-ed5b-745d-add1-b755d440192d - Evelyn (en_US)
+01955d76-ed5b-7528-86ee-3348a642af7e - Florence (en_US)
+01955d76-ed5b-7407-a03c-cdd993439ba4 - Madison (en_US)
+01955d76-ed5b-7474-86b2-a41b310c2a2d - Mia (en_US)
+01955d76-ed5b-7426-8748-4b0e5aea1974 - Olivia (en_US)
+01955d76-ed5b-751c-b341-0ee85dbefd92 - Poppy (en_US)
+01955d76-ed5b-73e0-a88d-cbeb3c5b499d - Sophia (en_US)
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">❓ NPCs speaking wrong language/gender?</div>
+                    <div class="faq-answer">
+                        <p><strong>Answer:</strong> When the game starts, random Voice IDs are assigned. Sometimes wrong gender voices or languages are assigned. This is a Player2 generation code issue that the developer is investigating.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">❓ How to assign favorite voice to NPC?</div>
+                    <div class="faq-answer">
+                        <p><strong>Answer:</strong> Find the NPC's "AssignedTTSVoice" in their .json file, copy the ID, and paste it into another NPC's file (same gender).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
         
         <!-- Multiple NPC Conversations -->
         <div class="section" id="multi-npc">
@@ -646,43 +864,6 @@ C:\Users\[YourName]\AppData\Local\Vortex\Mount and Blade II Bannerlord\AIInfluen
             </div>
         </div>
         
-        <!-- DeepSeek API Guide -->
-        <div class="section" id="deepseek-api">
-            <h2 class="section-title"><span class="icon">🔌</span> DeepSeek API Setup</h2>
-            
-            <div class="tutorial-card">
-                <h3><span class="icon">🌐</span> How to Use DeepSeek API with AI Influence</h3>
-                
-                <div class="step">
-                    <strong>Step 1: Create Account</strong>
-                    <p>Go to <a href="https://platform.deepseek.com" target="_blank">platform.deepseek.com</a> and create an account.</p>
-                </div>
-                
-                <div class="step">
-                    <strong>Step 2: Top Up API Funds</strong>
-                    <p>Add funds to your API account for usage.</p>
-                </div>
-                
-                <div class="step">
-                    <strong>Step 3: Generate API Key</strong>
-                    <p>Navigate to API Keys section and create a new API key.</p>
-                    <div class="warning">
-                        <strong>Warning:</strong> Save your API key immediately as you can only view it once. Never share it with others unless you intend to.
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <strong>Step 4: Configure in Game</strong>
-                    <p>In Bannerlord's MCM → AI Influence settings:</p>
-                    <ol>
-                        <li>Select DeepSeek as AI backend</li>
-                        <li>Enter your API key</li>
-                        <li>Configure URL if required</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-        
         <!-- Asterisk Roleplay Guide -->
         <div class="section" id="asterisk-rp">
             <h2 class="section-title"><span class="icon">⭐</span> Asterisk Roleplay Guide</h2>
@@ -753,79 +934,6 @@ C:\Users\[YourName]\AppData\Local\Vortex\Mount and Blade II Bannerlord\AIInfluen
 Player: *stops the procession of my leper knights, seeing the imperial banners in the distance. We step off the road, our armor slowly crunching as we move. I turn to Ragaea* Greetings, Empress, it is an honor to meet you on the road *I nod slightly with my deer-antlered helmet* I am Oskar of the Leper Knights.
 
 Ragaea: *I raise my hand in greeting, slightly bowing my head, which causes the heavy jeweled crown to gently shift in my hair. My scale armor clinks softly as I move* Greetings, Oskar. I saw your banners on the road. Leper Knights... I have heard tales of your service to travelers. It is a noble occupation in these troubled times. *My eyes survey your group, assessing their discipline and weaponry* What brings you to this region? The road to Lartuzys is not the safest, especially when The Aseraeans are tearing at our southern borders.
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Text-to-Speech Guide -->
-        <div class="section" id="tts-guide">
-            <h2 class="section-title"><span class="icon">🔊</span> Text-to-Speech (TTS) Guide</h2>
-            
-            <div class="tutorial-card">
-                <h3><span class="icon">🎙️</span> Player2 TTS System</h3>
-                
-                <div class="step">
-                    <strong>What TTS Does:</strong>
-                    <p>Player2's TTS system generates natural-sounding AI voices for every NPC in Bannerlord, replacing limited single-line voice acting with fully voiced dynamic conversations.</p>
-                </div>
-                
-                <div class="step">
-                    <strong>Enabling TTS:</strong>
-                    <ol>
-                        <li><strong>Step 1:</strong> Open Player2 and ensure the top-right corner slider is ON</li>
-                        <li><strong>Step 2:</strong> In Bannerlord → Mod Options → AI Influence → Scroll to Player2 Settings</li>
-                        <li><strong>Step 3:</strong> TTS is now enabled</li>
-                    </ol>
-                </div>
-                
-                <div class="step">
-                    <strong>TTS Voice Assignment:</strong>
-                    <div class="code-block">
-MALE VOICES:
-01955d76-ed5b-74ba-89e5-2b4b45e632cd - Benjamin (en_US)
-01955d76-ed5b-74de-83e5-800a44fee0d1 - Caleb (en_US)
-01955d76-ed5b-7566-9c0e-bce4d88ceba0 - Charles (en_US)
-01955d76-ed5b-748c-8d98-0fb708ef0fbd - Ethan (en_US)
-01955d76-ed5b-754f-a070-a570ddfed516 - Harry (en_US)
-01955d76-ed5b-74d2-a33c-b2b8e998658f - Jackson (en_US)
-01955d76-ed5b-74af-a2be-9302077075b8 - Logan (en_US)
-01955d76-ed5b-74c6-ac15-ab68ee19d560 - Lucas (en_US)
-01955d76-ed5b-74a3-9129-c3253d01f690 - Mason (en_US)
-01955d76-ed5b-74e9-9fea-1f8cad1cd9c5 - Nicholas (en_US)
-01955d76-ed5b-7497-9f8e-0e7448515bf3 - Noah (en_US)
-01955d76-ed5b-753f-9f74-c0674216f0f5 - Oliver (en_US)
-01955d76-ed5b-755b-9b43-890d73586908 - William (en_US)
-
-FEMALE VOICES:
-01955d76-ed5b-7468-83a7-bfc267cf4849 - Abigail (en_US)
-01955d76-ed5b-7441-a184-5f5ee015e4fe - Amelia (en_US)
-01955d76-ed5b-7534-b7a6-028adcfb4e7d - Amelia (en_US)
-01955d76-ed5b-7436-a182-c4d21aaca9fc - Ava (en_US)
-01955d76-ed5b-7451-92d6-5ef579d3ed28 - Charlotte (en_US)
-01955d76-ed5b-7480-951c-af1dd9873e34 - Chloe (en_US)
-01955d76-ed5b-74f9-b54a-2d051890468d - Eleanor (en_US)
-01955d76-ed5b-745d-add1-b755d440192d - Evelyn (en_US)
-01955d76-ed5b-7528-86ee-3348a642af7e - Florence (en_US)
-01955d76-ed5b-7407-a03c-cdd993439ba4 - Madison (en_US)
-01955d76-ed5b-7474-86b2-a41b310c2a2d - Mia (en_US)
-01955d76-ed5b-7426-8748-4b0e5aea1974 - Olivia (en_US)
-01955d76-ed5b-751c-b341-0ee85dbefd92 - Poppy (en_US)
-01955d76-ed5b-73e0-a88d-cbeb3c5b499d - Sophia (en_US)
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">❓ NPCs speaking wrong language/gender?</div>
-                    <div class="faq-answer">
-                        <p><strong>Answer:</strong> When the game starts, random Voice IDs are assigned. Sometimes wrong gender voices or languages are assigned. This is a Player2 generation code issue that the developer is investigating.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">❓ How to assign favorite voice to NPC?</div>
-                    <div class="faq-answer">
-                        <p><strong>Answer:</strong> Find the NPC's "AssignedTTSVoice" in their .json file, copy the ID, and paste it into another NPC's file (same gender).</p>
                     </div>
                 </div>
             </div>
@@ -946,114 +1054,6 @@ Steam Path: Drive:\PathToSteamInstall\workshop\content\261550\3584621421
                         <li>Edit desired characteristics</li>
                         <li>Boot game and talk to companion referencing your edits</li>
                     </ol>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Installation Guide -->
-        <div class="section" id="installation">
-            <h2 class="section-title"><span class="icon">📦</span> Installation Guide</h2>
-            
-            <div class="tutorial-card">
-                <h3><span class="icon">⚙️</span> How to Install AI Influence</h3>
-                
-                <div class="step">
-                    <strong>Step 1: Download Latest Version</strong>
-                    <p>Get the mod from:</p>
-                    <ul>
-                        <li><strong>Discord:</strong> ⁠🆙┃influence-updates channel</li>
-                        <li><strong>Steam Workshop:</strong> <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3584621421" target="_blank">Steam Link</a></li>
-                    </ul>
-                </div>
-                
-                <div class="step">
-                    <strong>Step 2: Extract to Modules Folder</strong>
-                    <div class="code-block">
-Mount & Blade II Bannerlord/Modules
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <strong>Step 3: Required Dependencies</strong>
-                    <ul>
-                        <li>Harmony</li>
-                        <li>ButterLib</li>
-                        <li>UIExtenderEx</li>
-                        <li>Mod Configuration Menu (MCM)</li>
-                    </ul>
-                    <div class="warning">
-                        <strong>⚠️ These mods must be ABOVE AIInfluence in load order!</strong>
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <strong>Step 4: Load Order Example</strong>
-                    <div class="code-block">
-1) Harmony
-2) ButterLib
-3) UIExtenderEx
-4) MCM
-5) AIInfluence ✅
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <strong>Step 5: Supported Versions</strong>
-                    <p>Bannerlord 1.3.9 - 1.3.13</p>
-                </div>
-            </div>
-            
-            <div class="tutorial-card">
-                <h3><span class="icon">🆓</span> Free Local AI - Player2 Setup</h3>
-                
-                <div class="step">
-                    <strong>1. Download Player2:</strong>
-                    <p><a href="https://player2.game/" target="_blank">https://player2.game/</a></p>
-                </div>
-                
-                <div class="step">
-                    <strong>2. Run Player2.exe:</strong>
-                    <p>Local server starts automatically at: <code>http://localhost:4315/</code></p>
-                </div>
-                
-                <div class="step">
-                    <strong>3. Configure in Bannerlord:</strong>
-                    <p>MCM → AIInfluence → Settings:</p>
-                    <ul>
-                        <li>AI Backend: Player2</li>
-                        <li>URL: <code>http://localhost:4315/</code></li>
-                        <li>API Key: leave empty ✅</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="tutorial-card">
-                <h3><span class="icon">🌐</span> Other Supported AI Providers</h3>
-                
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <h3><span class="icon">⭐</span> OpenRouter</h3>
-                        <p>GPT-4, Claude, Gemini, etc.</p>
-                        <p><strong>✅ Best quality, requires API key</strong></p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <h3><span class="icon">💻</span> Ollama</h3>
-                        <p>Local LLMs</p>
-                        <p><strong>✅ Free & offline, supports many models</strong></p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <h3><span class="icon">🖥️</span> KoboldCpp</h3>
-                        <p>Local AI chat models</p>
-                        <p><strong>✅ Good for lower-end PCs</strong></p>
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <strong>How to Switch Models:</strong>
-                    <p>MCM → AI Backend → Select provider → Enter API URL and Key if required</p>
-                    <p class="success"><strong>Tip:</strong> Better AI models = smarter characters</p>
                 </div>
             </div>
         </div>
