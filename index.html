@@ -421,6 +421,7 @@
                 <h3>Quick Navigation</h3>
                 <ul>
                     <li><a href="#multi-npc">Multiple NPC Conversations</a></li>
+                    <li><a href="#chatsync">ChatSync Mod Integration</a></li>
                     <li><a href="#deepseek-api">DeepSeek API Setup</a></li>
                     <li><a href="#asterisk-rp">Asterisk Roleplay Guide</a></li>
                     <li><a href="#tts-guide">Text-to-Speech (TTS)</a></li>
@@ -493,6 +494,154 @@ Alternate one block per speaker, never merging them. Keep each character's voice
                 <div class="step">
                     <strong>6. Note on Usage:</strong>
                     <p>Generating larger responses to complicated prompts can use more tokens from Player2. Report any bugs encountered while using the dual-conversation rule.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ChatSync Mod Integration -->
+        <div class="section" id="chatsync">
+            <h2 class="section-title"><span class="icon">🤝</span> ChatSync Integration Guide</h2>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">🔄</span> What is ChatSync?</h3>
+                
+                <div class="step">
+                    <strong>Overview:</strong>
+                    <p>ChatSync is a companion mod for AI Influence that synchronizes conversations between selected NPCs. Once synced, characters share the same conversation context, creating a natural multi-NPC conversation experience instead of isolated one-on-one interactions.</p>
+                    <div class="success">
+                        <strong>✅ Key Benefit:</strong> Eliminates the need to repeat dialogue. Synced NPCs are aware of what has already been said, making meetings, councils, and group discussions much more immersive.
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <strong>Compatibility & Installation:</strong>
+                    <p><strong>Required:</strong> AI Influence mod must be installed first.</p>
+                    <p><strong>Download:</strong> <a href="https://www.nexusmods.com/mountandblade2bannerlord/mods/9761" target="_blank">ChatSync Nexus Mods Page</a></p>
+                    <p><strong>Installation:</strong> Extract to your Modules folder like any other Bannerlord mod.</p>
+                </div>
+                
+                <div class="step">
+                    <strong>Universal Path Detection:</strong>
+                    <p>ChatSync automatically searches for AI Influence in ALL possible locations:</p>
+                    <ul>
+                        <li>✅ Steam Workshop installations (all drives and library folders)</li>
+                        <li>✅ Different mod managers (Vortex, ModOrganizer2)</li>
+                        <li>✅ Manual installations on any drive</li>
+                        <li>✅ Standard Bannerlord directories</li>
+                        <li>✅ Windows user folders (Documents, AppData)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">🎮</span> In-Game Controls & Features</h3>
+                
+                <div class="step">
+                    <strong>Hotkeys Configuration:</strong>
+                    <p>ChatSync features a fully customizable hotkey system:</p>
+                    <div class="code-block">
+F8 – Open/close ChatSync menu
+F9 – Toggle AutoSync ON/OFF instantly
+F10 – Show Diagnostics (press when experiencing issues)
+F11 – Manual Path Setup (if auto-detection fails)
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <strong>Smart Features:</strong>
+                    <ul>
+                        <li><strong>Intelligent Caching:</strong> First search takes seconds, subsequent loads are instant</li>
+                        <li><strong>Priority System:</strong> Steam Workshop paths checked first, then standard locations</li>
+                        <li><strong>Automatic Fallback:</strong> If one location fails, tries the next one</li>
+                        <li><strong>Comprehensive Logging:</strong> All paths searched are logged to ChatSync.log</li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <strong>Ideal Use Cases:</strong>
+                    <ul>
+                        <li>✅ Council meetings with multiple lords</li>
+                        <li>✅ Group discussions with companions</li>
+                        <li>✅ Diplomatic negotiations with multiple parties</li>
+                        <li>✅ Role-play focused gameplay sessions</li>
+                        <li>✅ Advisors and ruling council scenarios</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">🔧</span> Troubleshooting & Diagnostics</h3>
+                
+                <div class="step">
+                    <strong>How to Fix "NPC Not Found" Issues:</strong>
+                    <ol>
+                        <li>Press <strong>F10</strong> - See what the mod finds automatically</li>
+                        <li>If nothing found, press <strong>F11</strong> and enter your path manually</li>
+                    </ol>
+                </div>
+                
+                <div class="step">
+                    <strong>Common Path Examples:</strong>
+                    <div class="code-block">
+Steam Workshop: 
+C:\Steam\steamapps\workshop\content\261550\[mod_id]\AIInfluence\save_data
+
+Manual Install:
+C:\Games\Bannerlord\Modules\AIInfluence\save_data
+
+Vortex Mod Manager:
+C:\Users\[YourName]\AppData\Local\Vortex\Mount and Blade II Bannerlord\AIInfluence\save_data
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <strong>Diagnostics Information (F10):</strong>
+                    <p>When you press F10, ChatSync shows:</p>
+                    <ul>
+                        <li>✅ Whether AI Influence mod is found</li>
+                        <li>✅ Current campaign directory</li>
+                        <li>✅ Number of NPC files detected</li>
+                        <li>✅ Specific error messages if something is wrong</li>
+                        <li>✅ First 5 NPCs found (if any)</li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <strong>AutoSync Mode (F9):</strong>
+                    <p>When AutoSync is enabled, ChatSync automatically keeps dialogue context shared between NPCs you've selected, creating a seamless multi-conversation experience.</p>
+                    <div class="warning">
+                        <strong>⚠️ Performance Note:</strong> Syncing many NPCs simultaneously may impact performance. Start with 2-3 NPCs and add more as needed.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">💡</span> Tips for Best Experience</h3>
+                
+                <div class="step">
+                    <strong>Optimal Setup:</strong>
+                    <ol>
+                        <li>Ensure AI Influence is working correctly first</li>
+                        <li>Initialize NPCs in AI Influence before syncing them in ChatSync</li>
+                        <li>Start with 2-3 NPCs for testing</li>
+                        <li>Use F10 diagnostics if you encounter issues</li>
+                        <li>Check ChatSync.log for detailed error information</li>
+                    </ol>
+                </div>
+                
+                <div class="step">
+                    <strong>Combining with Dual-Conversation Format:</strong>
+                    <p>For the ultimate multi-NPC experience, combine ChatSync with the Dual-Conversation Format rule in your world.txt:</p>
+                    <div class="code-block">
+1. Use ChatSync to select and sync NPCs
+2. Apply the Dual-Conversation Format rule from the tutorial above
+3. Enjoy fully synchronized, formatted conversations with multiple characters
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <strong>NPC Search Function:</strong>
+                    <p>ChatSync includes an NPC search feature in its menu (F8) for quickly finding and selecting characters to sync, especially useful in large campaigns with many initialized NPCs.</p>
                 </div>
             </div>
         </div>
@@ -1114,5 +1263,4 @@ Mount & Blade II Bannerlord/Modules
         });
     </script>
 </body>
-
 </html>
