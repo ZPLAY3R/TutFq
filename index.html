@@ -394,75 +394,6 @@
             color: #D4AF37;
             text-decoration: underline;
         }
-        
-        /* Technical Guide specific styles */
-        .file-tree {
-            background: #2c3e50;
-            color: #f8f9fa;
-            padding: 20px;
-            border-radius: 5px;
-            margin: 15px 0;
-            font-family: 'Courier New', monospace;
-            white-space: pre;
-            overflow-x: auto;
-            border-left: 4px solid #D4AF37;
-        }
-        
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            background: #f8f9fa;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-        }
-        
-        .comparison-table th {
-            background: #4a6491;
-            color: white;
-            padding: 15px;
-            text-align: left;
-            font-weight: bold;
-        }
-        
-        .comparison-table td {
-            padding: 15px;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        .comparison-table tr:last-child td {
-            border-bottom: none;
-        }
-        
-        .comparison-table tr:nth-child(even) {
-            background: #f0f7ff;
-        }
-        
-        .json-example {
-            background: #2c3e50;
-            color: #f8f9fa;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 15px 0;
-            font-family: 'Courier New', monospace;
-            white-space: pre-wrap;
-            border-left: 4px solid #28a745;
-        }
-        
-        .cheat-sheet {
-            background: #f0f7ff;
-            border: 2px solid #4a6491;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-        
-        .cheat-sheet h4 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-family: 'MedievalSharp', cursive;
-        }
     </style>
 </head>
 <body>
@@ -489,15 +420,13 @@
             <div class="toc">
                 <h3>Quick Navigation</h3>
                 <ul>
-                    <li><a href="#installation">Installation Guide</a></li>
-                    <li><a href="#deepseek-api">DeepSeek API Setup</a></li>
-                    <li><a href="#tts-guide">Text-to-Speech (TTS)</a></li>
                     <li><a href="#multi-npc">Multiple NPC Conversations</a></li>
-                    <li><a href="#chatsync">ChatSync Mod Integration</a></li>
+                    <li><a href="#deepseek-api">DeepSeek API Setup</a></li>
                     <li><a href="#asterisk-rp">Asterisk Roleplay Guide</a></li>
+                    <li><a href="#tts-guide">Text-to-Speech (TTS)</a></li>
                     <li><a href="#rollback-ai">Rollback AI Actions</a></li>
                     <li><a href="#json-editing">Editing NPC .JSON Files</a></li>
-                    <li><a href="#technical-guide">Technical Guide</a></li>
+                    <li><a href="#installation">Installation Guide</a></li>
                     <li><a href="#faq">Frequently Asked Questions</a></li>
                     <li><a href="#troubleshooting">Troubleshooting</a></li>
                     <li><a href="#diplomacy">Diplomacy System</a></li>
@@ -507,110 +436,63 @@
         
         <div class="divider"></div>
         
-        <!-- Installation Guide -->
-        <div class="section" id="installation">
-            <h2 class="section-title"><span class="icon">📦</span> Installation Guide</h2>
+        <!-- Multiple NPC Conversations -->
+        <div class="section" id="multi-npc">
+            <h2 class="section-title"><span class="icon">👥</span> Multiple NPC Conversations</h2>
             
             <div class="tutorial-card">
-                <h3><span class="icon">⚙️</span> How to Install AI Influence</h3>
+                <h3><span class="icon">🔄</span> Dual-Conversation Format Tutorial</h3>
                 
                 <div class="step">
-                    <strong>Step 1: Download Latest Version</strong>
-                    <p>Get the mod from:</p>
-                    <ul>
-                        <li><strong>Discord:</strong> ⁠🆙┃influence-updates channel</li>
-                        <li><strong>Steam Workshop:</strong> <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3584621421" target="_blank">Steam Link</a></li>
-                    </ul>
+                    <strong>1. What This Tutorial Covers:</strong>
+                    <p>This tutorial explains how to enable conversations with multiple NPCs simultaneously, a feature not natively supported by the mod but possible through custom configurations.</p>
                 </div>
                 
                 <div class="step">
-                    <strong>Step 2: Extract to Modules Folder</strong>
+                    <strong>2. Compatibility:</strong>
+                    <p>Works with every version of Bannerlord/Warsails. It explores AI possibilities and prompt engineering techniques.</p>
+                </div>
+                
+                <div class="step">
+                    <strong>3. Initial Setup:</strong>
+                    <p>Go to MCM settings in-game:</p>
+                    <ol>
+                        <li>Set maximum AI response to 1000 characters</li>
+                        <li>Set minimum AI response to 300 characters</li>
+                    </ol>
+                </div>
+                
+                <div class="step">
+                    <strong>4. Edit world.txt File:</strong>
+                    <p>Add the following rule to your world.txt file:</p>
                     <div class="code-block">
-Mount & Blade II Bannerlord/Modules
+DUAL-CONVERSATION FORMAT (universal roleplay rule)
+Whenever the player explicitly asks an NPC to speak for two (or more) named characters in the same scene ("RP both {Character} and {Character}", "let Elga and Sidunric talk", etc.), that NPC must format the reply exactly like this:
+
+CharacterOne: action/description in asterisks Spoken line or inner thought.
+
+CharacterTwo: action/description in asterisks Spoken line or inner thought.
+
+CharacterThree: action/description in asterisks Spoken line or inner thought.
+
+CharacterFour: action/description in asterisks Spoken line or inner thought.
+
+Alternate one block per speaker, never merging them. Keep each character's voice, personality, and physical quirks perfectly intact. Everything said in these replies are to be remembered by each respective character even though the context isn't in their JSON files. Continue the back-and-forth naturally until the conversation pauses or the player interrupts. If one character is silent for a beat, still give them a labeled block to show body language or reaction. Never narrate as the player or break the labeling system.
                     </div>
                 </div>
                 
                 <div class="step">
-                    <strong>Step 3: Required Dependencies</strong>
-                    <ul>
-                        <li>Harmony</li>
-                        <li>ButterLib</li>
-                        <li>UIExtenderEx</li>
-                        <li>Mod Configuration Menu (MCM)</li>
-                    </ul>
-                    <div class="warning">
-                        <strong>⚠️ These mods must be ABOVE AIInfluence in load order!</strong>
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <strong>Step 4: Load Order Example</strong>
+                    <strong>5. Gathering NPCs & Conversation:</strong>
+                    <p>Gather NPCs in the same place (ideal for meetings). When speaking to the main NPC (settlement owner/meeting organizer), end your statement with:</p>
                     <div class="code-block">
-1) Harmony
-2) ButterLib
-3) UIExtenderEx
-4) MCM
-5) AIInfluence ✅
+*RP all four characters in the same reply using Hecard:, Servic:, Richelda:, Servic: labels so we can follow their back-and-forth easily.*
                     </div>
+                    <p class="warning">⚠️ <strong>Important:</strong> Always name each NPC involved to maintain consistency.</p>
                 </div>
                 
                 <div class="step">
-                    <strong>Step 5: Supported Versions</strong>
-                    <p>Bannerlord 1.3.9 - 1.3.13</p>
-                </div>
-            </div>
-            
-            <div class="tutorial-card">
-                <h3><span class="icon">🆓</span> Free Local AI - Player2 Setup</h3>
-                
-                <div class="step">
-                    <strong>1. Download Player2:</strong>
-                    <p><a href="https://player2.game/" target="_blank">https://player2.game/</a></p>
-                </div>
-                
-                <div class="step">
-                    <strong>2. Run Player2.exe:</strong>
-                    <p>Local server starts automatically at: <code>http://localhost:4315/</code></p>
-                </div>
-                
-                <div class="step">
-                    <strong>3. Configure in Bannerlord:</strong>
-                    <p>MCM → AIInfluence → Settings:</p>
-                    <ul>
-                        <li>AI Backend: Player2</li>
-                        <li>URL: <code>http://localhost:4315/</code></li>
-                        <li>API Key: leave empty ✅</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="tutorial-card">
-                <h3><span class="icon">🌐</span> Other Supported AI Providers</h3>
-                
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <h3><span class="icon">⭐</span> OpenRouter</h3>
-                        <p>GPT-4, Claude, Gemini, etc.</p>
-                        <p><strong>✅ Best quality, requires API key</strong></p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <h3><span class="icon">💻</span> Ollama</h3>
-                        <p>Local LLMs</p>
-                        <p><strong>✅ Free & offline, supports many models</strong></p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <h3><span class="icon">🖥️</span> KoboldCpp</h3>
-                        <p>Local AI chat models</p>
-                        <p><strong>✅ Good for lower-end PCs</strong></p>
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <strong>How to Switch Models:</strong>
-                    <p>MCM → AI Backend → Select provider → Enter API URL and Key if required</p>
-                    <p class="success"><strong>Tip:</strong> Better AI models = smarter characters</p>
+                    <strong>6. Note on Usage:</strong>
+                    <p>Generating larger responses to complicated prompts can use more tokens from Player2. Report any bugs encountered while using the dual-conversation rule.</p>
                 </div>
             </div>
         </div>
@@ -648,6 +530,81 @@ Mount & Blade II Bannerlord/Modules
                         <li>Enter your API key</li>
                         <li>Configure URL if required</li>
                     </ol>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Asterisk Roleplay Guide -->
+        <div class="section" id="asterisk-rp">
+            <h2 class="section-title"><span class="icon">⭐</span> Asterisk Roleplay Guide</h2>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">🎭</span> Using Asterisks Actions for Better Immersion</h3>
+                
+                <div class="step">
+                    <strong>1. Purpose & Benefits:</strong>
+                    <ul>
+                        <li>✅ Better management of situations with NPCs</li>
+                        <li>✅ Clarify NPC misunderstandings</li>
+                        <li>✅ Provide deeper immersion through extended replies</li>
+                        <li>✅ Increase chances of persuading NPCs</li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <strong>2. Planning Your Approach:</strong>
+                    <p>Consider these factors before interacting:</p>
+                    <ul>
+                        <li><strong>a)</strong> What do you want from the NPC?</li>
+                        <li><strong>b)</strong> What is the NPC's status (merchant, lord, noble, etc.)?</li>
+                        <li><strong>c)</strong> What approach matches your character?</li>
+                        <li><strong>d)</strong> What environmental details are worth describing?</li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <strong>3. Example Scenario:</strong>
+                    <p><strong>Situation:</strong> You want information from Korin, a merchant in Balgard.</p>
+                    <p><strong>Your Character:</strong> Wandering merchant/mercenary who served a Western Empire lord.</p>
+                    
+                    <div class="code-block">
+*I slowly walk by the side of road. I smile gently when approaching Korin's stall, then I slowly look at his wares* Well, I see you have pretty decent offer of nice wares *I'm gently touching one of the books that are displayed at stall, then I shift my focus back to Korin* I'm interested in some specific goods, and I heard that you may be the one who could provide them for me *I smile gently, a sun is lightly shining at the whole street when I come a few steps closer to the stall* I'm very interested in some old books from the region.
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <strong>4. Correcting AI Mistakes:</strong>
+                    <p>When NPCs don't believe your words, use asterisk actions to provide context:</p>
+                    <div class="code-block">
+*I nod gently then repeat myself* The words I have spoken are the honest truth, if you don't want to believe me, maybe you should ask your advisors *I slowly turn my head to the advisors of the king, and watch with smile on my face when they agree with my words* Now you see, that I did not lie to you.
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <strong>5. Getting Longer Replies:</strong>
+                    <p>Configure in MCM settings:</p>
+                    <ol>
+                        <li>Set maximum characters to highest value</li>
+                        <li>Set minimum response to at least 150 characters</li>
+                    </ol>
+                </div>
+                
+                <div class="step">
+                    <strong>6. Advanced Roleplay Tips:</strong>
+                    <ul>
+                        <li><strong>Use extended descriptions:</strong> "I walk slowly, the setting sun on horizon slowly reflects on my shining armor as I walk towards my soldiers"</li>
+                        <li><strong>Express emotions:</strong> "I just slowly pass by, not even considering his presence, my eyes are little wet from crying"</li>
+                        <li><strong>Act like a real person would!</strong></li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <strong>7. Full Conversation Example:</strong>
+                    <div class="code-block">
+*stops the procession of my leper knights, seeing the imperial banners in the distance. We step off the road, our armor slowly crunching as we move. I turn to Ragaea* Greetings, Empress, it is an honor to meet you on the road *I nod slightly with my deer-antlered helmet* I am Oskar of the Leper Knights.
+
+Ragaea: *raises my hand in greeting, slightly bowing my head, which causes the heavy jeweled crown to gently shift in my hair. My scale armor clinks softly as I move* Greetings, Oskar. I saw your banners on the road. Leper Knights... I have heard tales of your service to travelers. It is a noble occupation in these troubled times. *My eyes survey your group, assessing their discipline and weaponry* What brings you to this region? The road to Lartuzys is not the safest, especially when The Aseraeans are tearing at our southern borders.
+                    </div>
                 </div>
             </div>
         </div>
@@ -720,290 +677,6 @@ FEMALE VOICES:
                     <div class="faq-question">❓ How to assign favorite voice to NPC?</div>
                     <div class="faq-answer">
                         <p><strong>Answer:</strong> Find the NPC's "AssignedTTSVoice" in their .json file, copy the ID, and paste it into another NPC's file (same gender).</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Multiple NPC Conversations -->
-        <div class="section" id="multi-npc">
-            <h2 class="section-title"><span class="icon">👥</span> Multiple NPC Conversations</h2>
-            
-            <div class="tutorial-card">
-                <h3><span class="icon">🔄</span> Dual-Conversation Format Tutorial</h3>
-                
-                <div class="step">
-                    <strong>1. What This Tutorial Covers:</strong>
-                    <p>This tutorial explains how to enable conversations with multiple NPCs simultaneously, a feature not natively supported by the mod but possible through custom configurations.</p>
-                </div>
-                
-                <div class="step">
-                    <strong>2. Compatibility:</strong>
-                    <p>Works with every version of Bannerlord/Warsails. It explores AI possibilities and prompt engineering techniques.</p>
-                </div>
-                
-                <div class="step">
-                    <strong>3. Initial Setup:</strong>
-                    <p>Go to MCM settings in-game:</p>
-                    <ol>
-                        <li>Set maximum AI response to 1000 characters</li>
-                        <li>Set minimum AI response to 300 characters</li>
-                    </ol>
-                </div>
-                
-                <div class="step">
-                    <strong>4. Edit world.txt File:</strong>
-                    <p>Add the following rule to your world.txt file:</p>
-                    <div class="code-block">
-DUAL-CONVERSATION FORMAT (universal roleplay rule)
-Whenever the player explicitly asks an NPC to speak for two (or more) named characters in the same scene ("RP both {Character} and {Character}", "let Elga and Sidunric talk", etc.), that NPC must format the reply exactly like this:
-
-CharacterOne: action/description in asterisks Spoken line or inner thought.
-
-CharacterTwo: action/description in asterisks Spoken line or inner thought.
-
-CharacterThree: action/description in asterisks Spoken line or inner thought.
-
-CharacterFour: action/description in asterisks Spoken line or inner thought.
-
-Alternate one block per speaker, never merging them. Keep each character's voice, personality, and physical quirks perfectly intact. Everything said in these replies are to be remembered by each respective character even though the context isn't in their JSON files. Continue the back-and-forth naturally until the conversation pauses or the player interrupts. If one character is silent for a beat, still give them a labeled block to show body language or reaction. Never narrate as the player or break the labeling system.
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <strong>5. Gathering NPCs & Conversation:</strong>
-                    <p>Gather NPCs in the same place (ideal for meetings). When speaking to the main NPC (settlement owner/meeting organizer), end your statement with:</p>
-                    <div class="code-block">
-*RP all four characters in the same reply using Hecard:, Servic:, Richelda:, Servic: labels so we can follow their back-and-forth easily.*
-                    </div>
-                    <p class="warning">⚠️ <strong>Important:</strong> Always name each NPC involved to maintain consistency.</p>
-                </div>
-                
-                <div class="step">
-                    <strong>6. Note on Usage:</strong>
-                    <p>Generating larger responses to complicated prompts can use more tokens from Player2. Report any bugs encountered while using the dual-conversation rule.</p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- ChatSync Mod Integration -->
-        <div class="section" id="chatsync">
-            <h2 class="section-title"><span class="icon">🤝</span> ChatSync Integration Guide</h2>
-            
-            <div class="tutorial-card">
-                <h3><span class="icon">🔄</span> What is ChatSync?</h3>
-                
-                <div class="step">
-                    <strong>Overview:</strong>
-                    <p>ChatSync is a companion mod for AI Influence that synchronizes conversations between selected NPCs. Once synced, characters share the same conversation context, creating a natural multi-NPC conversation experience instead of isolated one-on-one interactions.</p>
-                    <div class="success">
-                        <strong>✅ Key Benefit:</strong> Eliminates the need to repeat dialogue. Synced NPCs are aware of what has already been said, making meetings, councils, and group discussions much more immersive.
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <strong>Compatibility & Installation:</strong>
-                    <p><strong>Required:</strong> AI Influence mod must be installed first.</p>
-                    <p><strong>Download:</strong> <a href="https://www.nexusmods.com/mountandblade2bannerlord/mods/9761" target="_blank">ChatSync Nexus Mods Page</a></p>
-                    <p><strong>Installation:</strong> Extract to your Modules folder like any other Bannerlord mod.</p>
-                </div>
-                
-                <div class="step">
-                    <strong>Universal Path Detection:</strong>
-                    <p>ChatSync automatically searches for AI Influence in ALL possible locations:</p>
-                    <ul>
-                        <li>✅ Steam Workshop installations (all drives and library folders)</li>
-                        <li>✅ Different mod managers (Vortex, ModOrganizer2)</li>
-                        <li>✅ Manual installations on any drive</li>
-                        <li>✅ Standard Bannerlord directories</li>
-                        <li>✅ Windows user folders (Documents, AppData)</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="tutorial-card">
-                <h3><span class="icon">🎮</span> In-Game Controls & Features</h3>
-                
-                <div class="step">
-                    <strong>Hotkeys Configuration:</strong>
-                    <p>ChatSync features a fully customizable hotkey system:</p>
-                    <div class="code-block">
-F8 – Open/close ChatSync menu
-F9 – Toggle AutoSync ON/OFF instantly
-F10 – Show Diagnostics (press when experiencing issues)
-F11 – Manual Path Setup (if auto-detection fails)
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <strong>Smart Features:</strong>
-                    <ul>
-                        <li><strong>Intelligent Caching:</strong> First search takes seconds, subsequent loads are instant</li>
-                        <li><strong>Priority System:</strong> Steam Workshop paths checked first, then standard locations</li>
-                        <li><strong>Automatic Fallback:</strong> If one location fails, tries the next one</li>
-                        <li><strong>Comprehensive Logging:</strong> All paths searched are logged to ChatSync.log</li>
-                    </ul>
-                </div>
-                
-                <div class="step">
-                    <strong>Ideal Use Cases:</strong>
-                    <ul>
-                        <li>✅ Council meetings with multiple lords</li>
-                        <li>✅ Group discussions with companions</li>
-                        <li>✅ Diplomatic negotiations with multiple parties</li>
-                        <li>✅ Role-play focused gameplay sessions</li>
-                        <li>✅ Advisors and ruling council scenarios</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="tutorial-card">
-                <h3><span class="icon">🔧</span> Troubleshooting & Diagnostics</h3>
-                
-                <div class="step">
-                    <strong>How to Fix "NPC Not Found" Issues:</strong>
-                    <ol>
-                        <li>Press <strong>F10</strong> - See what the mod finds automatically</li>
-                        <li>If nothing found, press <strong>F11</strong> and enter your path manually</li>
-                    </ol>
-                </div>
-                
-                <div class="step">
-                    <strong>Common Path Examples:</strong>
-                    <div class="code-block">
-Steam Workshop: 
-C:\Steam\steamapps\workshop\content\261550\[mod_id]\AIInfluence\save_data
-
-Manual Install:
-C:\Games\Bannerlord\Modules\AIInfluence\save_data
-
-Vortex Mod Manager:
-C:\Users\[YourName]\AppData\Local\Vortex\Mount and Blade II Bannerlord\AIInfluence\save_data
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <strong>Diagnostics Information (F10):</strong>
-                    <p>When you press F10, ChatSync shows:</p>
-                    <ul>
-                        <li>✅ Whether AI Influence mod is found</li>
-                        <li>✅ Current campaign directory</li>
-                        <li>✅ Number of NPC files detected</li>
-                        <li>✅ Specific error messages if something is wrong</li>
-                        <li>✅ First 5 NPCs found (if any)</li>
-                    </ul>
-                </div>
-                
-                <div class="step">
-                    <strong>AutoSync Mode (F9):</strong>
-                    <p>When AutoSync is enabled, ChatSync automatically keeps dialogue context shared between NPCs you've selected, creating a seamless multi-conversation experience.</p>
-                    <div class="warning">
-                        <strong>⚠️ Performance Note:</strong> Syncing many NPCs simultaneously may impact performance. Start with 2-3 NPCs and add more as needed.
-                    </div>
-                </div>
-            </div>
-            
-            <div class="tutorial-card">
-                <h3><span class="icon">💡</span> Tips for Best Experience</h3>
-                
-                <div class="step">
-                    <strong>Optimal Setup:</strong>
-                    <ol>
-                        <li>Ensure AI Influence is working correctly first</li>
-                        <li>Initialize NPCs in AI Influence before syncing them in ChatSync</li>
-                        <li>Start with 2-3 NPCs for testing</li>
-                        <li>Use F10 diagnostics if you encounter issues</li>
-                        <li>Check ChatSync.log for detailed error information</li>
-                    </ol>
-                </div>
-                
-                <div class="step">
-                    <strong>Combining with Dual-Conversation Format:</strong>
-                    <p>For the ultimate multi-NPC experience, combine ChatSync with the Dual-Conversation Format rule in your world.txt:</p>
-                    <div class="code-block">
-1. Use ChatSync to select and sync NPCs
-2. Apply the Dual-Conversation Format rule from the tutorial above
-3. Enjoy fully synchronized, formatted conversations with multiple characters
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <strong>NPC Search Function:</strong>
-                    <p>ChatSync includes an NPC search feature in its menu (F8) for quickly finding and selecting characters to sync, especially useful in large campaigns with many initialized NPCs.</p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Asterisk Roleplay Guide -->
-        <div class="section" id="asterisk-rp">
-            <h2 class="section-title"><span class="icon">⭐</span> Asterisk Roleplay Guide</h2>
-            
-            <div class="tutorial-card">
-                <h3><span class="icon">🎭</span> Using Asterisks Actions for Better Immersion</h3>
-                
-                <div class="step">
-                    <strong>1. Purpose & Benefits:</strong>
-                    <ul>
-                        <li>✅ Better management of situations with NPCs</li>
-                        <li>✅ Clarify NPC misunderstandings</li>
-                        <li>✅ Provide deeper immersion through extended replies</li>
-                        <li>✅ Increase chances of persuading NPCs</li>
-                    </ul>
-                </div>
-                
-                <div class="step">
-                    <strong>2. Planning Your Approach:</strong>
-                    <p>Consider these factors before interacting:</p>
-                    <ul>
-                        <li><strong>a)</strong> What do you want from the NPC?</li>
-                        <li><strong>b)</strong> What is the NPC's status (merchant, lord, noble, etc.)?</li>
-                        <li><strong>c)</strong> What approach matches your character?</li>
-                        <li><strong>d)</strong> What environmental details are worth describing?</li>
-                    </ul>
-                </div>
-                
-                <div class="step">
-                    <strong>3. Example Scenario:</strong>
-                    <p><strong>Situation:</strong> You want information from Korin, a merchant in Balgard.</p>
-                    <p><strong>Your Character:</strong> Wandering merchant/mercenary who served a Western Empire lord.</p>
-                    
-                    <div class="code-block">
-"I slowly walk by the side of road. I smile gently when approaching Korin's stall, then I slowly look at his wares *Well, I see you have pretty decent offer of nice wares* I'm gently touching one of the books that are displayed at stall, then I shift my focus back to Korin *I'm interested in some specific goods, and I heard that you may be the one who could provide them for me* I smile gently, a sun is lightly shining at the whole street when I come a few steps closer to the stall *I'm very interested in some old books from the region.*"
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <strong>4. Correcting AI Mistakes:</strong>
-                    <p>When NPCs don't believe your words, use asterisk actions to provide context:</p>
-                    <div class="code-block">
-"I nod gently then repeat myself *The words I have spoken are the honest truth, if you don't want to believe me, maybe you should ask your advisors* I slowly turn my head to the advisors of the king, and watch with smile on my face when they agree with my words *Now you see, that I did not lie to you.*"
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <strong>5. Getting Longer Replies:</strong>
-                    <p>Configure in MCM settings:</p>
-                    <ol>
-                        <li>Set maximum characters to highest value</li>
-                        <li>Set minimum response to at least 150 characters</li>
-                    </ol>
-                </div>
-                
-                <div class="step">
-                    <strong>6. Advanced Roleplay Tips:</strong>
-                    <ul>
-                        <li><strong>Use extended descriptions:</strong> "I walk slowly, the setting sun on horizon slowly reflects on my shining armor as I walk towards my soldiers"</li>
-                        <li><strong>Express emotions:</strong> "I just slowly pass by, not even considering his presence, my eyes are little wet from crying"</li>
-                        <li><strong>Act like a real person would!</strong></li>
-                    </ul>
-                </div>
-                
-                <div class="step">
-                    <strong>7. Full Conversation Example:</strong>
-                    <div class="code-block">
-Player: *stops the procession of my leper knights, seeing the imperial banners in the distance. We step off the road, our armor slowly crunching as we move. I turn to Ragaea* Greetings, Empress, it is an honor to meet you on the road *I nod slightly with my deer-antlered helmet* I am Oskar of the Leper Knights.
-
-Ragaea: *I raise my hand in greeting, slightly bowing my head, which causes the heavy jeweled crown to gently shift in my hair. My scale armor clinks softly as I move* Greetings, Oskar. I saw your banners on the road. Leper Knights... I have heard tales of your service to travelers. It is a noble occupation in these troubled times. *My eyes survey your group, assessing their discipline and weaponry* What brings you to this region? The road to Lartuzys is not the safest, especially when The Aseraeans are tearing at our southern borders.
                     </div>
                 </div>
             </div>
@@ -1128,414 +801,111 @@ Steam Path: Drive:\PathToSteamInstall\workshop\content\261550\3584621421
             </div>
         </div>
         
-        <!-- Technical Guide -->
-        <div class="section" id="technical-guide">
-            <h2 class="section-title"><span class="icon">🔧</span> Technical Guide</h2>
-            <p style="margin-bottom: 25px; font-style: italic; color: #555;">Comprehensive guide to AI Influence mod files and advanced configuration</p>
+        <!-- Installation Guide -->
+        <div class="section" id="installation">
+            <h2 class="section-title"><span class="icon">📦</span> Installation Guide</h2>
             
             <div class="tutorial-card">
-                <h3><span class="icon">📁</span> File Structure Overview</h3>
+                <h3><span class="icon">⚙️</span> How to Install AI Influence</h3>
                 
                 <div class="step">
-                    <strong>Complete Directory Tree:</strong>
-                    <div class="file-tree">
-AIInfluence DEV/
-├── world.txt                        # World description for the AI
-├── world_secrets.json               # NPC secrets
-├── world_info.json                  # General information
-├── quirks.json                      # Speech quirks
-├── cultural_traditions.json         # Cultural, romantic traditions
-│
-├── save_data/                       # Save data
-│   └── [CAMPAIGN_ID]/               # Campaign folder
-│       ├── NPC (id).json            # Context for each NPC
-│       ├── dynamic_events.json      # Active dynamic events
-│       ├── diplomatic_statements.json   # Rulers' statements
-│       ├── alliances.json           # Kingdom alliances
-│       ├── war_statistics.json      # War statistics
-│       ├── diplomatic_events.json   # Active diplomatic events
-│       ├── pending_player_statements.json # Pending player statements
-│       ├── trade_agreements.json    # Trade agreements
-│       ├── territory_transfers.json # Territory transfer history
-│       ├── tributes.json            # Tribute agreements
-│       └── reparations.json         # Reparations between kingdoms
-│
-└── logs/                            # Logs
-    ├── mod_log.txt
-    ├── diplomacy.txt
-    └── dynamicEvents.log</div>
-                </div>
-            </div>
-            
-            <div class="tutorial-card">
-                <h3><span class="icon">🌍</span> Core Configuration Files</h3>
-                
-                <div class="step">
-                    <strong>world.txt - Calradia World Description</strong>
+                    <strong>Step 1: Download Latest Version</strong>
+                    <p>Get the mod from:</p>
                     <ul>
-                        <li><strong>Purpose:</strong> Provides context to AI for every dialogue</li>
-                        <li><strong>Editing:</strong> Add lore in "Additional Information About Calradia:" section</li>
-                        <li><strong>Hot Reload:</strong> Automatically reloads when saved</li>
-                        <li><strong>Important:</strong> Use {Character} and {Player} placeholders instead of specific names</li>
+                        <li><strong>Discord:</strong> ⁠🆙┃influence-updates channel</li>
+                        <li><strong>Steam Workshop:</strong> <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3584621421" target="_blank">Steam Link</a></li>
                     </ul>
                 </div>
                 
                 <div class="step">
-                    <strong>world_secrets.json - Secret Knowledge System</strong>
-                    <div class="json-example">
-[
-  {
-    "id": "unique_id",
-    "description": "Description for the AI",
-    "knowledgeChance": 50,
-    "applicableNPCs": ["lords"],
-    "accessLevel": "high",
-    "tags": ["optional"]
-  }
-]</div>
-                    <ul>
-                        <li><strong>knowledgeChance:</strong> 0–100 chance NPC learns secret on first contact</li>
-                        <li><strong>applicableNPCs:</strong> "all", "lords", "companions", "faction_leaders", "village_notables", "merchants"</li>
-                        <li><strong>accessLevel:</strong> "low", "medium", "high" (shown in prompt)</li>
-                    </ul>
-                </div>
-                
-                <div class="step">
-                    <strong>world_info.json - Public Information</strong>
-                    <div class="json-example">
-[
-  {
-    "id": "unique_id",
-    "description": "Description (you can use {character})",
-    "usageChance": 75,
-    "applicableNPCs": ["all"],
-    "category": "world"
-  }
-]</div>
-                    <div class="warning">
-                        <strong>⚠️ CRITICAL:</strong> Secrets use "knowledgeChance", Info uses "usageChance". Do not confuse them!
+                    <strong>Step 2: Extract to Modules Folder</strong>
+                    <div class="code-block">
+Mount & Blade II Bannerlord/Modules
                     </div>
                 </div>
                 
                 <div class="step">
-                    <strong>quirks.json - Speech Personality</strong>
-                    <div class="json-example">
-[
-  "speaks briefly and avoids unnecessary words",
-  "uses hunting, battle, or military analogies",
-  "questions others like a quiet interrogator"
-]</div>
-                    <p>NPCs receive 1-2 random quirks at creation. Add your own strings to customize speaking styles.</p>
-                </div>
-                
-                <div class="step">
-                    <strong>cultural_traditions.json - Romantic Customs</strong>
-                    <p>Culture-specific romance traditions that affect flirt styles and relationship requirements.</p>
-                </div>
-            </div>
-            
-            <div class="tutorial-card">
-                <h3><span class="icon">💾</span> NPC JSON Files Deep Dive</h3>
-                
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Purpose</th>
-                            <th>Safe to Edit?</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><code>CharacterDescription</code></td>
-                            <td>NPC personality description</td>
-                            <td>✅ YES</td>
-                        </tr>
-                        <tr>
-                            <td><code>KnownSecrets</code></td>
-                            <td>Secrets known by NPC</td>
-                            <td>✅ YES (sets flag)</td>
-                        </tr>
-                        <tr>
-                            <td><code>KnownInfo</code></td>
-                            <td>Public info known by NPC</td>
-                            <td>✅ YES (sets flag)</td>
-                        </tr>
-                        <tr>
-                            <td><code>ConversationHistory</code></td>
-                            <td>Dialogue history</td>
-                            <td>❌ Automatic</td>
-                        </tr>
-                        <tr>
-                            <td><code>DynamicEvents</code></td>
-                            <td>Known world events</td>
-                            <td>❌ Automatic</td>
-                        </tr>
-                        <tr>
-                            <td><code>Quirks</code></td>
-                            <td>Speech quirks</td>
-                            <td>⚠️ Overwritten</td>
-                        </tr>
-                        <tr>
-                            <td><code>AIGeneratedPersonality</code></td>
-                            <td>Auto-generated personality</td>
-                            <td>⚠️ System-managed</td>
-                        </tr>
-                        <tr>
-                            <td><code>RomanceLevel</code></td>
-                            <td>Romance progression</td>
-                            <td>❌ System-only</td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <div class="step">
-                    <strong>Important Service Fields:</strong>
+                    <strong>Step 3: Required Dependencies</strong>
                     <ul>
-                        <li><code>KnownSecretsUserEdited</code> / <code>KnownInfoUserEdited</code> - Flags that knowledge was edited by user</li>
-                        <li><code>LastEventAnalysisMessageIndex</code> - Tracks which event messages were analyzed</li>
-                        <li><code>SettlementCombatInfo</code> - Battle information (system-managed)</li>
+                        <li>Harmony</li>
+                        <li>ButterLib</li>
+                        <li>UIExtenderEx</li>
+                        <li>Mod Configuration Menu (MCM)</li>
                     </ul>
                     <div class="warning">
-                        <strong>⚠️ Warning:</strong> If you don't fully understand a service field, do NOT edit it - you may break the system!
+                        <strong>⚠️ These mods must be ABOVE AIInfluence in load order!</strong>
                     </div>
                 </div>
-            </div>
-            
-            <div class="tutorial-card">
-                <h3><span class="icon">📊</span> Diplomacy & Event Files</h3>
                 
                 <div class="step">
-                    <strong>dynamic_events.json</strong>
-                    <ul>
-                        <li><strong>Type:</strong> "military", "political", "economic", "social", "mysterious"</li>
-                        <li><strong>Importance:</strong> 1–10 scale</li>
-                        <li><strong>Expiration:</strong> <code>expiration_campaign_days</code></li>
-                        <li><strong>NPC Link:</strong> Events stored in NPC <code>DynamicEvents</code> array</li>
-                    </ul>
-                    <p><strong>⚠️ Not recommended for manual editing</strong></p>
-                </div>
-                
-                <div class="step">
-                    <strong>diplomatic_statements.json</strong>
-                    <div class="json-example">
-{
-  "kingdom_id": "battania",
-  "statement_text": "Statement text",
-  "action": "None/DeclareWar/ProposePeace/...",
-  "target_kingdom_id": "khuzait",
-  "reason": "Reason",
-  "event_id": "event this statement refers to"
-}</div>
-                    <p>Stores last 15 statements over 50 in-game days. Managed automatically.</p>
-                </div>
-                
-                <div class="step">
-                    <strong>Additional Diplomacy Files (Automatic Management):</strong>
-                    <ul>
-                        <li><code>diplomatic_events.json</code> - Active diplomatic events</li>
-                        <li><code>pending_player_statements.json</code> - Deferred player statements</li>
-                        <li><code>trade_agreements.json</code> - Kingdom trade agreements</li>
-                        <li><code>territory_transfers.json</code> - Fief transfer history</li>
-                        <li><code>tributes.json</code> - Tribute payment agreements</li>
-                        <li><code>reparations.json</code> - Reparations data</li>
-                    </ul>
-                    <div class="warning">
-                        <strong>Rule:</strong> These files are for automatic system operation. Edit only if you clearly understand the consequences. Always backup first!
+                    <strong>Step 4: Load Order Example</strong>
+                    <div class="code-block">
+1) Harmony
+2) ButterLib
+3) UIExtenderEx
+4) MCM
+5) AIInfluence ✅
                     </div>
                 </div>
+                
+                <div class="step">
+                    <strong>Step 5: Supported Versions</strong>
+                    <p>Bannerlord 1.3.9 - 1.3.13</p>
+                </div>
             </div>
             
             <div class="tutorial-card">
-                <h3><span class="icon">📝</span> Log Files & Debugging</h3>
+                <h3><span class="icon">🆓</span> Free Local AI - Player2 Setup</h3>
                 
                 <div class="step">
-                    <strong>mod_log.txt (Main Log)</strong>
-                    <ul>
-                        <li>Mod initialization</li>
-                        <li>Config loading</li>
-                        <li>AI prompts and responses</li>
-                        <li>API errors</li>
-                    </ul>
-                    <p><strong>Check when:</strong> NPC not responding, secrets not loading, in-game errors</p>
+                    <strong>1. Download Player2:</strong>
+                    <p><a href="https://player2.game/" target="_blank">https://player2.game/</a></p>
                 </div>
                 
                 <div class="step">
-                    <strong>diplomacy.txt (Diplomacy Log)</strong>
-                    <ul>
-                        <li>Diplomacy system initialization</li>
-                        <li>Creation of diplomatic situations</li>
-                        <li>Full prompts and AI responses (with debugging)</li>
-                        <li>Action execution (wars, peace, alliances)</li>
-                    </ul>
+                    <strong>2. Run Player2.exe:</strong>
+                    <p>Local server starts automatically at: <code>http://localhost:4315/</code></p>
                 </div>
                 
                 <div class="step">
-                    <strong>dynamicEvents.log (Event Log)</strong>
+                    <strong>3. Configure in Bannerlord:</strong>
+                    <p>MCM → AIInfluence → Settings:</p>
                     <ul>
-                        <li>Event generation (full prompt and AI response)</li>
-                        <li>Event propagation to NPCs</li>
-                        <li>Deletion of expired events</li>
-                        <li>NPC knowledge cleanup</li>
+                        <li>AI Backend: Player2</li>
+                        <li>URL: <code>http://localhost:4315/</code></li>
+                        <li>API Key: leave empty ✅</li>
                     </ul>
                 </div>
             </div>
             
             <div class="tutorial-card">
-                <h3><span class="icon">🛠️</span> Common Tasks & Workflow</h3>
+                <h3><span class="icon">🌐</span> Other Supported AI Providers</h3>
                 
-                <div class="step">
-                    <strong>Adding a Secret:</strong>
-                    <ol>
-                        <li>Open <code>world_secrets.json</code></li>
-                        <li>Add object to array with <code>"knowledgeChance": 100</code> for testing</li>
-                        <li>Save → hot-reloaded automatically</li>
-                        <li>Create new NPC or reset existing one</li>
-                        <li>Start dialogue → check log for secret learning</li>
-                    </ol>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3><span class="icon">⭐</span> OpenRouter</h3>
+                        <p>GPT-4, Claude, Gemini, etc.</p>
+                        <p><strong>✅ Best quality, requires API key</strong></p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3><span class="icon">💻</span> Ollama</h3>
+                        <p>Local LLMs</p>
+                        <p><strong>✅ Free & offline, supports many models</strong></p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3><span class="icon">🖥️</span> KoboldCpp</h3>
+                        <p>Local AI chat models</p>
+                        <p><strong>✅ Good for lower-end PCs</strong></p>
+                    </div>
                 </div>
                 
                 <div class="step">
-                    <strong>Giving Secret to Specific NPC:</strong>
-                    <ol>
-                        <li>Open NPC's JSON file</li>
-                        <li>Find <code>KnownSecrets</code> array</li>
-                        <li>Add secret ID: <code>["My_Secret", "Another_Secret"]</code></li>
-                        <li><code>KnownSecretsUserEdited</code> flag automatically becomes <code>true</code></li>
-                    </ol>
+                    <strong>How to Switch Models:</strong>
+                    <p>MCM → AI Backend → Select provider → Enter API URL and Key if required</p>
+                    <p class="success"><strong>Tip:</strong> Better AI models = smarter characters</p>
                 </div>
-                
-                <div class="step">
-                    <strong>Finding Campaign ID:</strong>
-                    <ul>
-                        <li><strong>Option 1:</strong> Check <code>logs/mod_log.txt</code> for "Created save directory"</li>
-                        <li><strong>Option 2:</strong> MCM → Debug → Show Save Folder Info</li>
-                    </ul>
-                </div>
-                
-                <div class="step">
-                    <strong>Resetting NPC Data:</strong>
-                    <ul>
-                        <li><strong>All NPCs:</strong> MCM → NPC Management → Clear Current Campaign NPC Data</li>
-                        <li><strong>Specific NPC:</strong> MCM → NPC Management → Erase Specific NPC</li>
-                        <li><strong>Manual:</strong> Delete <code>save_data/[ID]/NPC_name.json</code> file</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="cheat-sheet">
-                <h4>📌 Quick Reference Cheat Sheet</h4>
-                
-                <div class="step">
-                    <strong>NPC Types for applicableNPCs:</strong>
-                    <div class="code-block">
-"all"              - Everyone
-"lords"            - Lords
-"companions"       - Companions
-"faction_leaders"  - Rulers
-"village_notables" - Village notables
-"merchants"        - Merchants</div>
-                </div>
-                
-                <div class="step">
-                    <strong>Event Types:</strong>
-                    <div class="code-block">
-"news"        - Important news
-"political"   - Diplomacy
-"military"    - Wars, battles
-"economic"    - Trade
-"local"       - Local events
-"rumor"       - Rumors</div>
-                </div>
-                
-                <div class="step">
-                    <strong>Diplomatic Actions:</strong>
-                    <div class="code-block">
-"None"            - Statement only
-"DeclareWar"      - Declare war
-"ProposePeace"    - Propose peace
-"AcceptPeace"     - Accept peace
-"RejectPeace"     - Reject peace
-"ProposeAlliance" - Propose alliance
-"AcceptAlliance"  - Accept alliance
-"RejectAlliance"  - Reject alliance
-"BreakAlliance"   - Break alliance</div>
-                </div>
-            </div>
-            
-            <div class="tutorial-card">
-                <h3><span class="icon">⚠️</span> Critical Rules & Best Practices</h3>
-                
-                <div class="step">
-                    <strong>JSON File Rules:</strong>
-                    <ul>
-                        <li>✅ Always validate JSON (use jsonlint.com)</li>
-                        <li>✅ Make backups before editing</li>
-                        <li>✅ Do not delete required fields</li>
-                        <li>❌ Do not edit system-managed files unless necessary</li>
-                    </ul>
-                </div>
-                
-                <div class="step">
-                    <strong>Hot Reload Files:</strong>
-                    <ul>
-                        <li>✅ <code>world.txt</code></li>
-                        <li>✅ <code>world_secrets.json</code></li>
-                        <li>✅ <code>world_info.json</code></li>
-                        <li>✅ <code>quirks.json</code></li>
-                        <li>✅ <code>cultural_traditions.json</code></li>
-                    </ul>
-                    <p>NPC files reload on next interaction.</p>
-                </div>
-                
-                <div class="step">
-                    <strong>Edit Flags System:</strong>
-                    <p>When you edit <code>KnownSecrets</code> or <code>KnownInfo</code>:</p>
-                    <ul>
-                        <li><code>UserEdited</code> flag automatically becomes <code>true</code></li>
-                        <li>System will no longer touch these fields</li>
-                        <li>Reset via MCM → Reset User-Edited Knowledge</li>
-                    </ul>
-                </div>
-                
-                <div class="step">
-                    <strong>Secrets vs Info Key Differences:</strong>
-                    <table class="comparison-table">
-                        <thead>
-                            <tr>
-                                <th>Aspect</th>
-                                <th>Secrets</th>
-                                <th>Info</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>File</strong></td>
-                                <td><code>world_secrets.json</code></td>
-                                <td><code>world_info.json</code></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Chance Field</strong></td>
-                                <td><code>knowledgeChance</code></td>
-                                <td><code>usageChance</code></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Classification</strong></td>
-                                <td><code>accessLevel + tags</code></td>
-                                <td><code>category</code></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Purpose</strong></td>
-                                <td>Secrets, require trust</td>
-                                <td>Public information</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            
-            <div class="warning" style="margin-top: 30px;">
-                <strong>🎯 Final Recommendation:</strong> This technical guide is for advanced users and modders. If you're unsure about any editing, stick to the in-game MCM settings and consult the community before making changes to system files. Always maintain backups of your save_data folder!
             </div>
         </div>
         
@@ -1745,4 +1115,3 @@ AIInfluence DEV/
     </script>
 </body>
 </html>
-
