@@ -394,6 +394,75 @@
             color: #D4AF37;
             text-decoration: underline;
         }
+        
+        /* Technical Guide specific styles */
+        .file-tree {
+            background: #2c3e50;
+            color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            white-space: pre;
+            overflow-x: auto;
+            border-left: 4px solid #D4AF37;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #f8f9fa;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        
+        .comparison-table th {
+            background: #4a6491;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: #f0f7ff;
+        }
+        
+        .json-example {
+            background: #2c3e50;
+            color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            border-left: 4px solid #28a745;
+        }
+        
+        .cheat-sheet {
+            background: #f0f7ff;
+            border: 2px solid #4a6491;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .cheat-sheet h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-family: 'MedievalSharp', cursive;
+        }
     </style>
 </head>
 <body>
@@ -428,6 +497,7 @@
                     <li><a href="#asterisk-rp">Asterisk Roleplay Guide</a></li>
                     <li><a href="#rollback-ai">Rollback AI Actions</a></li>
                     <li><a href="#json-editing">Editing NPC .JSON Files</a></li>
+                    <li><a href="#technical-guide">Technical Guide</a></li>
                     <li><a href="#faq">Frequently Asked Questions</a></li>
                     <li><a href="#troubleshooting">Troubleshooting</a></li>
                     <li><a href="#diplomacy">Diplomacy System</a></li>
@@ -448,8 +518,8 @@
                     <strong>Step 1: Download Latest Version</strong>
                     <p>Get the mod from:</p>
                     <ul>
+                        <li><strong>Discord:</strong> ⁠🆙┃influence-updates channel</li>
                         <li><strong>Steam Workshop:</strong> <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3584621421" target="_blank">Steam Link</a></li>
-                        <li><strong>Nexus:</strong> <a href="https://www.nexusmods.com/mountandblade2bannerlord/mods/9711" target="_blank">Nexus Link</a></li>
                     </ul>
                 </div>
                 
@@ -1058,6 +1128,417 @@ Steam Path: Drive:\PathToSteamInstall\workshop\content\261550\3584621421
             </div>
         </div>
         
+        <!-- Technical Guide -->
+        <div class="section" id="technical-guide">
+            <h2 class="section-title"><span class="icon">🔧</span> Technical Guide</h2>
+            <p style="margin-bottom: 25px; font-style: italic; color: #555;">Comprehensive guide to AI Influence mod files and advanced configuration</p>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">📁</span> File Structure Overview</h3>
+                
+                <div class="step">
+                    <strong>Complete Directory Tree:</strong>
+                    <div class="file-tree">
+AIInfluence DEV/
+├── world.txt                        # World description for the AI
+├── world_secrets.json               # NPC secrets
+├── world_info.json                  # General information
+├── quirks.json                      # Speech quirks
+├── cultural_traditions.json         # Romantic traditions
+│
+├── save_data/                       # Save data
+│   └── [CAMPAIGN_ID]/               # Campaign folder
+│       ├── NPC (id).json            # Context for each NPC
+│       ├── dynamic_events.json      # Active dynamic events
+│       ├── diplomatic_statements.json   # Rulers' statements
+│       ├── alliances.json           # Kingdom alliances
+│       ├── war_statistics.json      # War statistics
+│       ├── diplomatic_events.json   # Active diplomatic events
+│       ├── pending_player_statements.json # Pending player statements
+│       ├── trade_agreements.json    # Trade agreements
+│       ├── territory_transfers.json # Territory transfer history
+│       ├── tributes.json            # Tribute agreements
+│       └── reparations.json         # Reparations between kingdoms
+│
+└── logs/                            # Logs
+    ├── mod_log.txt
+    ├── diplomacy.txt
+    └── dynamicEvents.log</div>
+                </div>
+            </div>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">🌍</span> Core Configuration Files</h3>
+                
+                <div class="step">
+                    <strong>world.txt - Calradia World Description</strong>
+                    <ul>
+                        <li><strong>Purpose:</strong> Provides context to AI for every dialogue</li>
+                        <li><strong>Editing:</strong> Add lore in "Additional Information About Calradia:" section</li>
+                        <li><strong>Hot Reload:</strong> Automatically reloads when saved</li>
+                        <li><strong>Important:</strong> Use {Character} and {Player} placeholders instead of specific names</li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <strong>world_secrets.json - Secret Knowledge System</strong>
+                    <div class="json-example">
+[
+  {
+    "id": "unique_id",
+    "description": "Description for the AI",
+    "knowledgeChance": 50,
+    "applicableNPCs": ["lords"],
+    "accessLevel": "high",
+    "tags": ["optional"]
+  }
+]</div>
+                    <ul>
+                        <li><strong>knowledgeChance:</strong> 0–100 chance NPC learns secret on first contact</li>
+                        <li><strong>applicableNPCs:</strong> "all", "lords", "companions", "faction_leaders", "village_notables", "merchants"</li>
+                        <li><strong>accessLevel:</strong> "low", "medium", "high" (shown in prompt)</li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <strong>world_info.json - Public Information</strong>
+                    <div class="json-example">
+[
+  {
+    "id": "unique_id",
+    "description": "Description (you can use {character})",
+    "usageChance": 75,
+    "applicableNPCs": ["all"],
+    "category": "world"
+  }
+]</div>
+                    <div class="warning">
+                        <strong>⚠️ CRITICAL:</strong> Secrets use "knowledgeChance", Info uses "usageChance". Do not confuse them!
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <strong>quirks.json - Speech Personality</strong>
+                    <div class="json-example">
+[
+  "speaks briefly and avoids unnecessary words",
+  "uses hunting, battle, or military analogies",
+  "questions others like a quiet interrogator"
+]</div>
+                    <p>NPCs receive 1-2 random quirks at creation. Add your own strings to customize speaking styles.</p>
+                </div>
+                
+                <div class="step">
+                    <strong>cultural_traditions.json - Romantic Customs</strong>
+                    <p>Culture-specific romance traditions that affect flirt styles and relationship requirements.</p>
+                </div>
+            </div>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">💾</span> NPC JSON Files Deep Dive</h3>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Purpose</th>
+                            <th>Safe to Edit?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>CharacterDescription</code></td>
+                            <td>NPC personality description</td>
+                            <td>✅ YES</td>
+                        </tr>
+                        <tr>
+                            <td><code>KnownSecrets</code></td>
+                            <td>Secrets known by NPC</td>
+                            <td>✅ YES (sets flag)</td>
+                        </tr>
+                        <tr>
+                            <td><code>KnownInfo</code></td>
+                            <td>Public info known by NPC</td>
+                            <td>✅ YES (sets flag)</td>
+                        </tr>
+                        <tr>
+                            <td><code>ConversationHistory</code></td>
+                            <td>Dialogue history</td>
+                            <td>❌ Automatic</td>
+                        </tr>
+                        <tr>
+                            <td><code>DynamicEvents</code></td>
+                            <td>Known world events</td>
+                            <td>❌ Automatic</td>
+                        </tr>
+                        <tr>
+                            <td><code>Quirks</code></td>
+                            <td>Speech quirks</td>
+                            <td>⚠️ Overwritten</td>
+                        </tr>
+                        <tr>
+                            <td><code>AIGeneratedPersonality</code></td>
+                            <td>Auto-generated personality</td>
+                            <td>⚠️ System-managed</td>
+                        </tr>
+                        <tr>
+                            <td><code>RomanceLevel</code></td>
+                            <td>Romance progression</td>
+                            <td>❌ System-only</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="step">
+                    <strong>Important Service Fields:</strong>
+                    <ul>
+                        <li><code>KnownSecretsUserEdited</code> / <code>KnownInfoUserEdited</code> - Flags that knowledge was edited by user</li>
+                        <li><code>LastEventAnalysisMessageIndex</code> - Tracks which event messages were analyzed</li>
+                        <li><code>SettlementCombatInfo</code> - Battle information (system-managed)</li>
+                    </ul>
+                    <div class="warning">
+                        <strong>⚠️ Warning:</strong> If you don't fully understand a service field, do NOT edit it - you may break the system!
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">📊</span> Diplomacy & Event Files</h3>
+                
+                <div class="step">
+                    <strong>dynamic_events.json</strong>
+                    <ul>
+                        <li><strong>Type:</strong> "military", "political", "economic", "social", "mysterious"</li>
+                        <li><strong>Importance:</strong> 1–10 scale</li>
+                        <li><strong>Expiration:</strong> <code>expiration_campaign_days</code></li>
+                        <li><strong>NPC Link:</strong> Events stored in NPC <code>DynamicEvents</code> array</li>
+                    </ul>
+                    <p><strong>⚠️ Not recommended for manual editing</strong></p>
+                </div>
+                
+                <div class="step">
+                    <strong>diplomatic_statements.json</strong>
+                    <div class="json-example">
+{
+  "kingdom_id": "battania",
+  "statement_text": "Statement text",
+  "action": "None/DeclareWar/ProposePeace/...",
+  "target_kingdom_id": "khuzait",
+  "reason": "Reason",
+  "event_id": "event this statement refers to"
+}</div>
+                    <p>Stores last 15 statements over 50 in-game days. Managed automatically.</p>
+                </div>
+                
+                <div class="step">
+                    <strong>Additional Diplomacy Files (Automatic Management):</strong>
+                    <ul>
+                        <li><code>diplomatic_events.json</code> - Active diplomatic events</li>
+                        <li><code>pending_player_statements.json</code> - Deferred player statements</li>
+                        <li><code>trade_agreements.json</code> - Kingdom trade agreements</li>
+                        <li><code>territory_transfers.json</code> - Fief transfer history</li>
+                        <li><code>tributes.json</code> - Tribute payment agreements</li>
+                        <li><code>reparations.json</code> - Reparations data</li>
+                    </ul>
+                    <div class="warning">
+                        <strong>Rule:</strong> These files are for automatic system operation. Edit only if you clearly understand the consequences. Always backup first!
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">📝</span> Log Files & Debugging</h3>
+                
+                <div class="step">
+                    <strong>mod_log.txt (Main Log)</strong>
+                    <ul>
+                        <li>Mod initialization</li>
+                        <li>Config loading</li>
+                        <li>AI prompts and responses</li>
+                        <li>API errors</li>
+                    </ul>
+                    <p><strong>Check when:</strong> NPC not responding, secrets not loading, in-game errors</p>
+                </div>
+                
+                <div class="step">
+                    <strong>diplomacy.txt (Diplomacy Log)</strong>
+                    <ul>
+                        <li>Diplomacy system initialization</li>
+                        <li>Creation of diplomatic situations</li>
+                        <li>Full prompts and AI responses (with debugging)</li>
+                        <li>Action execution (wars, peace, alliances)</li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <strong>dynamicEvents.log (Event Log)</strong>
+                    <ul>
+                        <li>Event generation (full prompt and AI response)</li>
+                        <li>Event propagation to NPCs</li>
+                        <li>Deletion of expired events</li>
+                        <li>NPC knowledge cleanup</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">🛠️</span> Common Tasks & Workflow</h3>
+                
+                <div class="step">
+                    <strong>Adding a Secret:</strong>
+                    <ol>
+                        <li>Open <code>world_secrets.json</code></li>
+                        <li>Add object to array with <code>"knowledgeChance": 100</code> for testing</li>
+                        <li>Save → hot-reloaded automatically</li>
+                        <li>Create new NPC or reset existing one</li>
+                        <li>Start dialogue → check log for secret learning</li>
+                    </ol>
+                </div>
+                
+                <div class="step">
+                    <strong>Giving Secret to Specific NPC:</strong>
+                    <ol>
+                        <li>Open NPC's JSON file</li>
+                        <li>Find <code>KnownSecrets</code> array</li>
+                        <li>Add secret ID: <code>["My_Secret", "Another_Secret"]</code></li>
+                        <li><code>KnownSecretsUserEdited</code> flag automatically becomes <code>true</code></li>
+                    </ol>
+                </div>
+                
+                <div class="step">
+                    <strong>Finding Campaign ID:</strong>
+                    <ul>
+                        <li><strong>Option 1:</strong> Check <code>logs/mod_log.txt</code> for "Created save directory"</li>
+                        <li><strong>Option 2:</strong> MCM → Debug → Show Save Folder Info</li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <strong>Resetting NPC Data:</strong>
+                    <ul>
+                        <li><strong>All NPCs:</strong> MCM → NPC Management → Clear Current Campaign NPC Data</li>
+                        <li><strong>Specific NPC:</strong> MCM → NPC Management → Erase Specific NPC</li>
+                        <li><strong>Manual:</strong> Delete <code>save_data/[ID]/NPC_name.json</code> file</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="cheat-sheet">
+                <h4>📌 Quick Reference Cheat Sheet</h4>
+                
+                <div class="step">
+                    <strong>NPC Types for applicableNPCs:</strong>
+                    <div class="code-block">
+"all"              - Everyone
+"lords"            - Lords
+"companions"       - Companions
+"faction_leaders"  - Rulers
+"village_notables" - Village notables
+"merchants"        - Merchants</div>
+                </div>
+                
+                <div class="step">
+                    <strong>Event Types:</strong>
+                    <div class="code-block">
+"news"        - Important news
+"political"   - Diplomacy
+"military"    - Wars, battles
+"economic"    - Trade
+"local"       - Local events
+"rumor"       - Rumors</div>
+                </div>
+                
+                <div class="step">
+                    <strong>Diplomatic Actions:</strong>
+                    <div class="code-block">
+"None"            - Statement only
+"DeclareWar"      - Declare war
+"ProposePeace"    - Propose peace
+"AcceptPeace"     - Accept peace
+"RejectPeace"     - Reject peace
+"ProposeAlliance" - Propose alliance
+"AcceptAlliance"  - Accept alliance
+"RejectAlliance"  - Reject alliance
+"BreakAlliance"   - Break alliance</div>
+                </div>
+            </div>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">⚠️</span> Critical Rules & Best Practices</h3>
+                
+                <div class="step">
+                    <strong>JSON File Rules:</strong>
+                    <ul>
+                        <li>✅ Always validate JSON (use jsonlint.com)</li>
+                        <li>✅ Make backups before editing</li>
+                        <li>✅ Do not delete required fields</li>
+                        <li>❌ Do not edit system-managed files unless necessary</li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <strong>Hot Reload Files:</strong>
+                    <ul>
+                        <li>✅ <code>world.txt</code></li>
+                        <li>✅ <code>world_secrets.json</code></li>
+                        <li>✅ <code>world_info.json</code></li>
+                        <li>✅ <code>quirks.json</code></li>
+                        <li>✅ <code>cultural_traditions.json</code></li>
+                    </ul>
+                    <p>NPC files reload on next interaction.</p>
+                </div>
+                
+                <div class="step">
+                    <strong>Edit Flags System:</strong>
+                    <p>When you edit <code>KnownSecrets</code> or <code>KnownInfo</code>:</p>
+                    <ul>
+                        <li><code>UserEdited</code> flag automatically becomes <code>true</code></li>
+                        <li>System will no longer touch these fields</li>
+                        <li>Reset via MCM → Reset User-Edited Knowledge</li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <strong>Secrets vs Info Key Differences:</strong>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Aspect</th>
+                                <th>Secrets</th>
+                                <th>Info</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>File</strong></td>
+                                <td><code>world_secrets.json</code></td>
+                                <td><code>world_info.json</code></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Chance Field</strong></td>
+                                <td><code>knowledgeChance</code></td>
+                                <td><code>usageChance</code></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Classification</strong></td>
+                                <td><code>accessLevel + tags</code></td>
+                                <td><code>category</code></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Purpose</strong></td>
+                                <td>Secrets, require trust</td>
+                                <td>Public information</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="warning" style="margin-top: 30px;">
+                <strong>🎯 Final Recommendation:</strong> This technical guide is for advanced users and modders. If you're unsure about any editing, stick to the in-game MCM settings and consult the community before making changes to system files. Always maintain backups of your save_data folder!
+            </div>
+        </div>
+        
         <!-- FAQ Section -->
         <div class="section" id="faq">
             <h2 class="section-title"><span class="icon">❓</span> Frequently Asked Questions</h2>
@@ -1215,7 +1696,7 @@ Steam Path: Drive:\PathToSteamInstall\workshop\content\261550\3584621421
             <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2);">
                 <p><strong>Current Version:</strong> 3.3.7 • <strong>Last Updated:</strong> January 2026</p>
                 <p><strong>Compatibility:</strong> Mount & Blade II: Bannerlord v1.3.9 - 1.3.13</p>
-                <p><strong>Document Created:</strong> <span id="current-date"></span></p>
+                <p><strong>Document Generated:</strong> <span id="current-date"></span></p>
                 <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
                     This tutorial compendium is community-generated based on official documentation and community contributions.
                     Always check official sources for latest information.
@@ -1264,6 +1745,3 @@ Steam Path: Drive:\PathToSteamInstall\workshop\content\261550\3584621421
     </script>
 </body>
 </html>
-
-
-
