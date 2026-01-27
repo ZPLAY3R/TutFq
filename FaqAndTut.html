@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Influence Mod - Complete Tutorials & FAQ Guide</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Roboto:wght@300;400;500;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border: 2px solid #8B4513;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            border-bottom: 8px solid #D4AF37;
+        }
+        
+        .header-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .header-content h1 {
+            font-family: 'MedievalSharp', cursive;
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+        }
+        
+        .header-content .subtitle {
+            font-size: 1.5em;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #D4AF37;
+            color: #2c3e50;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        .language-switcher {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 5px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .lang-btn.active {
+            background: #D4AF37;
+            color: #2c3e50;
+            border-color: #D4AF37;
+        }
+        
+        .divider {
+            height: 4px;
+            background: linear-gradient(90deg, #8B4513, #D4AF37, #8B4513);
+            margin: 10px 0;
+        }
+        
+        .section {
+            padding: 30px 40px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .section-title {
+            font-family: 'MedievalSharp', cursive;
+            font-size: 2.2em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #D4AF37;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .section-title::before {
+            content: '';
+            width: 10px;
+            height: 40px;
+            background: #8B4513;
+            border-radius: 2px;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            border-left: 5px solid #4a6491;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        
+        .feature-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .tutorial-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 5px solid #D4AF37;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        
+        .tutorial-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .step {
+            margin: 20px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .step::before {
+            content: '📌';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        .code-block {
+            background: #2c3e50;
+            color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            border-left: 4px solid #D4AF37;
+        }
+        
+        .faq-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 5px solid #4a6491;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .faq-answer {
+            color: #555;
+        }
+        
+        .icon {
+            font-size: 1.8em;
+            display: inline-block;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        
+        .quote {
+            background: #f0f7ff;
+            border-left: 5px solid #4a6491;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+            font-style: italic;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .warning strong {
+            color: #856404;
+        }
+        
+        .success {
+            background: #d4edda;
+            border-left: 5px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-top: 8px solid #D4AF37;
+        }
+        
+        .download-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #D4AF37;
+            color: #2c3e50;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .download-btn:hover {
+            background: transparent;
+            color: #D4AF37;
+            border-color: #D4AF37;
+        }
+        
+        .discord-link {
+            background: #7289DA;
+            color: white;
+        }
+        
+        .discord-link:hover {
+            background: transparent;
+            color: #7289DA;
+            border-color: #7289DA;
+        }
+        
+        .nexus-link {
+            background: #DA8B17;
+            color: white;
+        }
+        
+        .nexus-link:hover {
+            background: transparent;
+            color: #DA8B17;
+            border-color: #DA8B17;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                border: none;
+            }
+            .download-btn {
+                display: none;
+            }
+            .language-switcher {
+                display: none;
+            }
+        }
+        
+        .page-break {
+            page-break-before: always;
+        }
+        
+        .watermark {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 120px;
+            opacity: 0.03;
+            color: #8B4513;
+            pointer-events: none;
+            font-family: 'MedievalSharp', cursive;
+            white-space: nowrap;
+        }
+        
+        .toc {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px solid #4a6491;
+        }
+        
+        .toc h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-family: 'MedievalSharp', cursive;
+        }
+        
+        .toc ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+        
+        .toc li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .toc li::before {
+            content: '⚔️';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        .toc a {
+            color: #4a6491;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .toc a:hover {
+            color: #D4AF37;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="watermark">AI TUTORIALS</div>
+    
+    <div class="container">
+        <header>
+            <div class="language-switcher">
+                <button class="lang-btn active" onclick="changeLanguage('en')">EN</button>
+                <button class="lang-btn" onclick="changeLanguage('ru')">RU</button>
+            </div>
+            
+            <div class="header-content">
+                <h1>AI INFLUENCE TUTORIALS</h1>
+                <p class="subtitle">Mount & Blade II: Bannerlord — Complete Tutorials & FAQ Compendium</p>
+                <p>Master the AI Influence Mod • From Beginner to Advanced Roleplay</p>
+            </div>
+            <div class="badge">v3.3.7 • Updated: January 2026</div>
+        </header>
+        
+        <!-- Table of Contents -->
+        <div class="section">
+            <h2 class="section-title">📚 Table of Contents</h2>
+            <div class="toc">
+                <h3>Quick Navigation</h3>
+                <ul>
+                    <li><a href="#multi-npc">Multiple NPC Conversations</a></li>
+                    <li><a href="#deepseek-api">DeepSeek API Setup</a></li>
+                    <li><a href="#asterisk-rp">Asterisk Roleplay Guide</a></li>
+                    <li><a href="#tts-guide">Text-to-Speech (TTS)</a></li>
+                    <li><a href="#rollback-ai">Rollback AI Actions</a></li>
+                    <li><a href="#json-editing">Editing NPC .JSON Files</a></li>
+                    <li><a href="#installation">Installation Guide</a></li>
+                    <li><a href="#faq">Frequently Asked Questions</a></li>
+                    <li><a href="#troubleshooting">Troubleshooting</a></li>
+                    <li><a href="#diplomacy">Diplomacy System</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <!-- Multiple NPC Conversations -->
+        <div class="section" id="multi-npc">
+            <h2 class="section-title"><span class="icon">👥</span> Multiple NPC Conversations</h2>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">🔄</span> Dual-Conversation Format Tutorial</h3>
+                
+                <div class="step">
+                    <strong>1. What This Tutorial Covers:</strong>
+                    <p>This tutorial explains how to enable conversations with multiple NPCs simultaneously, a feature not natively supported by the mod but possible through custom configurations.</p>
+                </div>
+                
+                <div class="step">
+                    <strong>2. Compatibility:</strong>
+                    <p>Works with every version of Bannerlord/Warsails. It explores AI possibilities and prompt engineering techniques.</p>
+                </div>
+                
+                <div class="step">
+                    <strong>3. Initial Setup:</strong>
+                    <p>Go to MCM settings in-game:</p>
+                    <ol>
+                        <li>Set maximum AI response to 1000 characters</li>
+                        <li>Set minimum AI response to 300 characters</li>
+                    </ol>
+                </div>
+                
+                <div class="step">
+                    <strong>4. Edit world.txt File:</strong>
+                    <p>Add the following rule to your world.txt file:</p>
+                    <div class="code-block">
+DUAL-CONVERSATION FORMAT (universal roleplay rule)
+Whenever the player explicitly asks an NPC to speak for two (or more) named characters in the same scene ("RP both {Character} and {Character}", "let Elga and Sidunric talk", etc.), that NPC must format the reply exactly like this:
+
+CharacterOne: action/description in asterisks Spoken line or inner thought.
+
+CharacterTwo: action/description in asterisks Spoken line or inner thought.
+
+CharacterThree: action/description in asterisks Spoken line or inner thought.
+
+CharacterFour: action/description in asterisks Spoken line or inner thought.
+
+Alternate one block per speaker, never merging them. Keep each character's voice, personality, and physical quirks perfectly intact. Everything said in these replies are to be remembered by each respective character even though the context isn't in their JSON files. Continue the back-and-forth naturally until the conversation pauses or the player interrupts. If one character is silent for a beat, still give them a labeled block to show body language or reaction. Never narrate as the player or break the labeling system.
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <strong>5. Gathering NPCs & Conversation:</strong>
+                    <p>Gather NPCs in the same place (ideal for meetings). When speaking to the main NPC (settlement owner/meeting organizer), end your statement with:</p>
+                    <div class="code-block">
+*RP all four characters in the same reply using Hecard:, Servic:, Richelda:, Servic: labels so we can follow their back-and-forth easily.*
+                    </div>
+                    <p class="warning">⚠️ <strong>Important:</strong> Always name each NPC involved to maintain consistency.</p>
+                </div>
+                
+                <div class="step">
+                    <strong>6. Note on Usage:</strong>
+                    <p>Generating larger responses to complicated prompts can use more tokens from Player2. Report any bugs encountered while using the dual-conversation rule.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- DeepSeek API Guide -->
+        <div class="section" id="deepseek-api">
+            <h2 class="section-title"><span class="icon">🔌</span> DeepSeek API Setup</h2>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">🌐</span> How to Use DeepSeek API with AI Influence</h3>
+                
+                <div class="step">
+                    <strong>Step 1: Create Account</strong>
+                    <p>Go to <a href="https://platform.deepseek.com" target="_blank">platform.deepseek.com</a> and create an account.</p>
+                </div>
+                
+                <div class="step">
+                    <strong>Step 2: Top Up API Funds</strong>
+                    <p>Add funds to your API account for usage.</p>
+                </div>
+                
+                <div class="step">
+                    <strong>Step 3: Generate API Key</strong>
+                    <p>Navigate to API Keys section and create a new API key.</p>
+                    <div class="warning">
+                        <strong>Warning:</strong> Save your API key immediately as you can only view it once. Never share it with others unless you intend to.
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <strong>Step 4: Configure in Game</strong>
+                    <p>In Bannerlord's MCM → AI Influence settings:</p>
+                    <ol>
+                        <li>Select DeepSeek as AI backend</li>
+                        <li>Enter your API key</li>
+                        <li>Configure URL if required</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Asterisk Roleplay Guide -->
+        <div class="section" id="asterisk-rp">
+            <h2 class="section-title"><span class="icon">⭐</span> Asterisk Roleplay Guide</h2>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">🎭</span> Using Asterisks Actions for Better Immersion</h3>
+                
+                <div class="step">
+                    <strong>1. Purpose & Benefits:</strong>
+                    <ul>
+                        <li>✅ Better management of situations with NPCs</li>
+                        <li>✅ Clarify NPC misunderstandings</li>
+                        <li>✅ Provide deeper immersion through extended replies</li>
+                        <li>✅ Increase chances of persuading NPCs</li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <strong>2. Planning Your Approach:</strong>
+                    <p>Consider these factors before interacting:</p>
+                    <ul>
+                        <li><strong>a)</strong> What do you want from the NPC?</li>
+                        <li><strong>b)</strong> What is the NPC's status (merchant, lord, noble, etc.)?</li>
+                        <li><strong>c)</strong> What approach matches your character?</li>
+                        <li><strong>d)</strong> What environmental details are worth describing?</li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <strong>3. Example Scenario:</strong>
+                    <p><strong>Situation:</strong> You want information from Korin, a merchant in Balgard.</p>
+                    <p><strong>Your Character:</strong> Wandering merchant/mercenary who served a Western Empire lord.</p>
+                    
+                    <div class="code-block">
+"I slowly walk by the side of road. I smile gently when approaching Korin's stall, then I slowly look at his wares *Well, I see you have pretty decent offer of nice wares* I'm gently touching one of the books that are displayed at stall, then I shift my focus back to Korin *I'm interested in some specific goods, and I heard that you may be the one who could provide them for me* I smile gently, a sun is lightly shining at the whole street when I come a few steps closer to the stall *I'm very interested in some old books from the region.*"
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <strong>4. Correcting AI Mistakes:</strong>
+                    <p>When NPCs don't believe your words, use asterisk actions to provide context:</p>
+                    <div class="code-block">
+"I nod gently then repeat myself *The words I have spoken are the honest truth, if you don't want to believe me, maybe you should ask your advisors* I slowly turn my head to the advisors of the king, and watch with smile on my face when they agree with my words *Now you see, that I did not lie to you.*"
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <strong>5. Getting Longer Replies:</strong>
+                    <p>Configure in MCM settings:</p>
+                    <ol>
+                        <li>Set maximum characters to highest value</li>
+                        <li>Set minimum response to at least 150 characters</li>
+                    </ol>
+                </div>
+                
+                <div class="step">
+                    <strong>6. Advanced Roleplay Tips:</strong>
+                    <ul>
+                        <li><strong>Use extended descriptions:</strong> "I walk slowly, the setting sun on horizon slowly reflects on my shining armor as I walk towards my soldiers"</li>
+                        <li><strong>Express emotions:</strong> "I just slowly pass by, not even considering his presence, my eyes are little wet from crying"</li>
+                        <li><strong>Act like a real person would!</strong></li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <strong>7. Full Conversation Example:</strong>
+                    <div class="code-block">
+Player: *stops the procession of my leper knights, seeing the imperial banners in the distance. We step off the road, our armor slowly crunching as we move. I turn to Ragaea* Greetings, Empress, it is an honor to meet you on the road *I nod slightly with my deer-antlered helmet* I am Oskar of the Leper Knights.
+
+Ragaea: *I raise my hand in greeting, slightly bowing my head, which causes the heavy jeweled crown to gently shift in my hair. My scale armor clinks softly as I move* Greetings, Oskar. I saw your banners on the road. Leper Knights... I have heard tales of your service to travelers. It is a noble occupation in these troubled times. *My eyes survey your group, assessing their discipline and weaponry* What brings you to this region? The road to Lartuzys is not the safest, especially when The Aseraeans are tearing at our southern borders.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Text-to-Speech Guide -->
+        <div class="section" id="tts-guide">
+            <h2 class="section-title"><span class="icon">🔊</span> Text-to-Speech (TTS) Guide</h2>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">🎙️</span> Player2 TTS System</h3>
+                
+                <div class="step">
+                    <strong>What TTS Does:</strong>
+                    <p>Player2's TTS system generates natural-sounding AI voices for every NPC in Bannerlord, replacing limited single-line voice acting with fully voiced dynamic conversations.</p>
+                </div>
+                
+                <div class="step">
+                    <strong>Enabling TTS:</strong>
+                    <ol>
+                        <li><strong>Step 1:</strong> Open Player2 and ensure the top-right corner slider is ON</li>
+                        <li><strong>Step 2:</strong> In Bannerlord → Mod Options → AI Influence → Scroll to Player2 Settings</li>
+                        <li><strong>Step 3:</strong> TTS is now enabled</li>
+                    </ol>
+                </div>
+                
+                <div class="step">
+                    <strong>TTS Voice Assignment:</strong>
+                    <div class="code-block">
+MALE VOICES:
+01955d76-ed5b-74ba-89e5-2b4b45e632cd - Benjamin (en_US)
+01955d76-ed5b-74de-83e5-800a44fee0d1 - Caleb (en_US)
+01955d76-ed5b-7566-9c0e-bce4d88ceba0 - Charles (en_US)
+01955d76-ed5b-748c-8d98-0fb708ef0fbd - Ethan (en_US)
+01955d76-ed5b-754f-a070-a570ddfed516 - Harry (en_US)
+01955d76-ed5b-74d2-a33c-b2b8e998658f - Jackson (en_US)
+01955d76-ed5b-74af-a2be-9302077075b8 - Logan (en_US)
+01955d76-ed5b-74c6-ac15-ab68ee19d560 - Lucas (en_US)
+01955d76-ed5b-74a3-9129-c3253d01f690 - Mason (en_US)
+01955d76-ed5b-74e9-9fea-1f8cad1cd9c5 - Nicholas (en_US)
+01955d76-ed5b-7497-9f8e-0e7448515bf3 - Noah (en_US)
+01955d76-ed5b-753f-9f74-c0674216f0f5 - Oliver (en_US)
+01955d76-ed5b-755b-9b43-890d73586908 - William (en_US)
+
+FEMALE VOICES:
+01955d76-ed5b-7468-83a7-bfc267cf4849 - Abigail (en_US)
+01955d76-ed5b-7441-a184-5f5ee015e4fe - Amelia (en_US)
+01955d76-ed5b-7534-b7a6-028adcfb4e7d - Amelia (en_US)
+01955d76-ed5b-7436-a182-c4d21aaca9fc - Ava (en_US)
+01955d76-ed5b-7451-92d6-5ef579d3ed28 - Charlotte (en_US)
+01955d76-ed5b-7480-951c-af1dd9873e34 - Chloe (en_US)
+01955d76-ed5b-74f9-b54a-2d051890468d - Eleanor (en_US)
+01955d76-ed5b-745d-add1-b755d440192d - Evelyn (en_US)
+01955d76-ed5b-7528-86ee-3348a642af7e - Florence (en_US)
+01955d76-ed5b-7407-a03c-cdd993439ba4 - Madison (en_US)
+01955d76-ed5b-7474-86b2-a41b310c2a2d - Mia (en_US)
+01955d76-ed5b-7426-8748-4b0e5aea1974 - Olivia (en_US)
+01955d76-ed5b-751c-b341-0ee85dbefd92 - Poppy (en_US)
+01955d76-ed5b-73e0-a88d-cbeb3c5b499d - Sophia (en_US)
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">❓ NPCs speaking wrong language/gender?</div>
+                    <div class="faq-answer">
+                        <p><strong>Answer:</strong> When the game starts, random Voice IDs are assigned. Sometimes wrong gender voices or languages are assigned. This is a Player2 generation code issue that the developer is investigating.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">❓ How to assign favorite voice to NPC?</div>
+                    <div class="faq-answer">
+                        <p><strong>Answer:</strong> Find the NPC's "AssignedTTSVoice" in their .json file, copy the ID, and paste it into another NPC's file (same gender).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Rollback AI Actions -->
+        <div class="section" id="rollback-ai">
+            <h2 class="section-title"><span class="icon">⏪</span> Rollback AI Actions</h2>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">🔄</span> Step-by-Step Rollback Guide</h3>
+                
+                <div class="step">
+                    <strong>Scenario:</strong>
+                    <p>AI does something undesirable (e.g., Raganvad spamming war declarations on his own faction).</p>
+                </div>
+                
+                <div class="step">
+                    <strong>Step 1: Preparation</strong>
+                    <p>Have a save from before the problematic events. If not, proceed cautiously.</p>
+                </div>
+                
+                <div class="step">
+                    <strong>Step 2: Locate Mod Files</strong>
+                    <p>Navigate to mod installation folder (Nexus manual download recommended):</p>
+                    <div class="code-block">
+Steam Path: Drive:\PathToSteamInstall\workshop\content\261550\3584621421
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <strong>Step 3: Find Character JSON</strong>
+                    <p>Use the JSON editing tutorial to find the specific character file.</p>
+                    <div class="warning">
+                        <strong>Warning:</strong> Multiple results may appear if you have multiple campaigns.
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <strong>Step 4: Edit JSON Sections</strong>
+                    <p>Look for these sections in the JSON file:</p>
+                    <ul>
+                        <li>"ConversationHistory"</li>
+                        <li>"LastDynamicResponse"</li>
+                        <li>"LastAIResponseJson"</li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <strong>Step 5: Clean ConversationHistory</strong>
+                    <p>Delete problematic sections from ConversationHistory. Leave it formatted with their last reply.</p>
+                </div>
+                
+                <div class="step">
+                    <strong>Step 6: Update LastDynamicResponse</strong>
+                    <p>Copy the last line from ConversationHistory (without quotation marks or character name) and paste into "LastDynamicResponse" inside quotation marks.</p>
+                </div>
+                
+                <div class="step">
+                    <strong>Step 7: Update LastAIResponseJSON</strong>
+                    <p>Repeat for "LastAIResponseJSON" - paste in correct spot inside quotes.</p>
+                </div>
+                
+                <div class="step">
+                    <strong>Step 8: Save & Reload</strong>
+                    <p>Save the JSON file and reload your previous save game.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- JSON Editing Guide -->
+        <div class="section" id="json-editing">
+            <h2 class="section-title"><span class="icon">📝</span> Editing NPC .JSON Files</h2>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">🔧</span> Finding and Editing NPC Characteristics</h3>
+                
+                <div class="step">
+                    <strong>1. What You Can Edit:</strong>
+                    <ul>
+                        <li>"AIGeneratedBackstory" - NPC's AI-generated history</li>
+                        <li>"AIGeneratedPersonality" - NPC's personality traits</li>
+                        <li>NPC quirks and additional information</li>
+                    </ul>
+                    <div class="warning">
+                        <strong>⚠️ Always backup JSON files before editing. Only edit when game is NOT launched to avoid bugs/freezes.</strong>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <strong>2. Finding JSON Files:</strong>
+                    <ol>
+                        <li>Open AI Influence folder</li>
+                        <li>Use search bar to find specific NPC (e.g., "Baroness Kalatylda (lord_4_6)")</li>
+                        <li>Multiple JSON files may appear (from different saves)</li>
+                        <li>Open the newest file with Notepad</li>
+                    </ol>
+                </div>
+                
+                <div class="step">
+                    <strong>3. Key Information Sections:</strong>
+                    <ul>
+                        <li>✅ NPC Quirks</li>
+                        <li>✅ Personality</li>
+                        <li>✅ Backstory</li>
+                        <li>✅ Last Dynamic Response</li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <strong>4. Creating Custom Companions:</strong>
+                    <p><strong>Quick Method:</strong></p>
+                    <ol>
+                        <li>Recruit wanderer from inn using vanilla features</li>
+                        <li>Initialize them via AI (even with minimal input)</li>
+                        <li>Save game and exit Bannerlord</li>
+                        <li>Search for companion's JSON file</li>
+                        <li>Edit desired characteristics</li>
+                        <li>Boot game and talk to companion referencing your edits</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Installation Guide -->
+        <div class="section" id="installation">
+            <h2 class="section-title"><span class="icon">📦</span> Installation Guide</h2>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">⚙️</span> How to Install AI Influence</h3>
+                
+                <div class="step">
+                    <strong>Step 1: Download Latest Version</strong>
+                    <p>Get the mod from:</p>
+                    <ul>
+                        <li><strong>Discord:</strong> ⁠🆙┃influence-updates channel</li>
+                        <li><strong>Steam Workshop:</strong> <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3584621421" target="_blank">Steam Link</a></li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <strong>Step 2: Extract to Modules Folder</strong>
+                    <div class="code-block">
+Mount & Blade II Bannerlord/Modules
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <strong>Step 3: Required Dependencies</strong>
+                    <ul>
+                        <li>Harmony</li>
+                        <li>ButterLib</li>
+                        <li>UIExtenderEx</li>
+                        <li>Mod Configuration Menu (MCM)</li>
+                    </ul>
+                    <div class="warning">
+                        <strong>⚠️ These mods must be ABOVE AIInfluence in load order!</strong>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <strong>Step 4: Load Order Example</strong>
+                    <div class="code-block">
+1) Harmony
+2) ButterLib
+3) UIExtenderEx
+4) MCM
+5) AIInfluence ✅
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <strong>Step 5: Supported Versions</strong>
+                    <p>Bannerlord 1.3.9 - 1.3.13</p>
+                </div>
+            </div>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">🆓</span> Free Local AI - Player2 Setup</h3>
+                
+                <div class="step">
+                    <strong>1. Download Player2:</strong>
+                    <p><a href="https://player2.game/" target="_blank">https://player2.game/</a></p>
+                </div>
+                
+                <div class="step">
+                    <strong>2. Run Player2.exe:</strong>
+                    <p>Local server starts automatically at: <code>http://localhost:4315/</code></p>
+                </div>
+                
+                <div class="step">
+                    <strong>3. Configure in Bannerlord:</strong>
+                    <p>MCM → AIInfluence → Settings:</p>
+                    <ul>
+                        <li>AI Backend: Player2</li>
+                        <li>URL: <code>http://localhost:4315/</code></li>
+                        <li>API Key: leave empty ✅</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">🌐</span> Other Supported AI Providers</h3>
+                
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3><span class="icon">⭐</span> OpenRouter</h3>
+                        <p>GPT-4, Claude, Gemini, etc.</p>
+                        <p><strong>✅ Best quality, requires API key</strong></p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3><span class="icon">💻</span> Ollama</h3>
+                        <p>Local LLMs</p>
+                        <p><strong>✅ Free & offline, supports many models</strong></p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3><span class="icon">🖥️</span> KoboldCpp</h3>
+                        <p>Local AI chat models</p>
+                        <p><strong>✅ Good for lower-end PCs</strong></p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <strong>How to Switch Models:</strong>
+                    <p>MCM → AI Backend → Select provider → Enter API URL and Key if required</p>
+                    <p class="success"><strong>Tip:</strong> Better AI models = smarter characters</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FAQ Section -->
+        <div class="section" id="faq">
+            <h2 class="section-title"><span class="icon">❓</span> Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">📌 Where should I ask questions about the mod?</div>
+                <div class="faq-answer">
+                    <p><strong>Answer:</strong> Check FAQ first, then use Discord for mod discussions.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">⚠️ What should I know about the BETA status?</div>
+                <div class="faq-answer">
+                    <p><strong>Answer:</strong> AIInfluence is in BETA. Bugs, weird NPC behavior, and unexpected AI actions are normal. Report issues in appropriate channels.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">⚙️ How do I set up MCM AI Backend?</div>
+                <div class="faq-answer">
+                    <p><strong>Answer:</strong> MCM → AI Backend → Select provider (Player2, OpenRouter, etc.) → Enter URL and API key if required → Press "Test Connection" to validate.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">❤️ What are Romance settings?</div>
+                <div class="faq-answer">
+                    <p><strong>Answer:</strong> MCM → Romance (BETA) settings:</p>
+                    <ul>
+                        <li>Minimum romance level for marriage (default 50)</li>
+                        <li>Romance with married NPCs (OFF by default)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">📰 How do Dynamic Events work?</div>
+                <div class="faq-answer">
+                    <p><strong>Answer:</strong> AI analyzes dialogues and creates news, rumors, and political events. These spread between NPCs and can influence alliances, trigger wars, or peace agreements. ⚠️ Some features are experimental.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Troubleshooting -->
+        <div class="section" id="troubleshooting">
+            <h2 class="section-title"><span class="icon">🔧</span> Troubleshooting Guide</h2>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">❌</span> Mod Not Working?</h3>
+                
+                <div class="step">
+                    <strong>Check These First:</strong>
+                    <ul>
+                        <li>✅ Correct Bannerlord version? (1.2.12 or 1.3.1)</li>
+                        <li>✅ Dependencies installed? (Harmony, ButterLib, UIExtenderEx, MCM)</li>
+                        <li>✅ Load order correct? (Dependencies ABOVE AIInfluence)</li>
+                        <li>✅ Running without conflicting dialogue/diplomacy mods?</li>
+                        <li>✅ Try new campaign</li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <strong>AI Not Talking / No Messages?</strong>
+                    <p>Check AI backend settings in MCM:</p>
+                    <ul>
+                        <li>✔ AI Backend selected? (Player2, OpenRouter, etc.)</li>
+                        <li>✔ URL correct? (e.g., <code>http://localhost:4315/</code>)</li>
+                        <li>✔ Internet ON? (if using cloud AI)</li>
+                        <li>✔ API Key entered correctly? (if required)</li>
+                    </ul>
+                    <p class="success"><strong>✅ Tip:</strong> Press "Test Connection" button in MCM!</p>
+                </div>
+                
+                <div class="step">
+                    <strong>Freezes or Low FPS?</strong>
+                    <ul>
+                        <li>⚠️ Too many initialized AI characters!</li>
+                        <li>MCM → Performance: Reduce AI character count (recommended: Around 100 active NPCs)</li>
+                        <li>✅ Disable heavy mods that rewrite diplomacy or economy</li>
+                        <li>✅ Restart Player2 / AI backend after long sessions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Diplomacy System -->
+        <div class="section" id="diplomacy">
+            <h2 class="section-title"><span class="icon">👑</span> Diplomacy System Guide</h2>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">⚔️</span> How AI Diplomacy Works</h3>
+                
+                <div class="step">
+                    <strong>AI-Driven Diplomacy:</strong>
+                    <ul>
+                        <li>• AI creates and reacts to world events</li>
+                        <li>• AI leaders make public statements</li>
+                        <li>• AI can declare war or propose peace</li>
+                        <li>• AI can form or break alliances</li>
+                    </ul>
+                    <p>Statements affect relationships between kingdoms.</p>
+                    <div class="warning">
+                        <strong>⚠️ System is still in active development. Unexpected behavior may occur during BETA testing.</strong>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <strong>Player Political Influence:</strong>
+                    <p>If you are a KING/QUEEN:</p>
+                    <ul>
+                        <li>• Make diplomatic statements through your governor</li>
+                        <li>• Declare war publicly</li>
+                        <li>• Offer or reject peace</li>
+                        <li>• Form or break alliances</li>
+                    </ul>
+                    <p>Statements appear in BLUE on the campaign map 🌐</p>
+                    <p><em>AI will evaluate your actions — not just accept them.</em></p>
+                </div>
+            </div>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">⚠️</span> Known Limitations (BETA)</h3>
+                
+                <div class="step">
+                    <strong>NPC Initialization:</strong>
+                    <p>Only NPCs you have talked to are fully driven by AI. Others do not know recent events until first interaction.</p>
+                </div>
+                
+                <div class="step">
+                    <strong>Performance Constraint:</strong>
+                    <p>Too many initialized AI NPCs will cause lag or freezes. Recommended active limit: around 100 NPCs.</p>
+                </div>
+                
+                <div class="step">
+                    <strong>Diplomacy System (BETA):</strong>
+                    <p>The system is still being rewritten — bugs and unexpected behavior are possible. Developer actively updates based on community feedback.</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <h2 style="font-family: 'MedievalSharp', cursive; margin-bottom: 20px;">Community & Support</h2>
+            <p style="margin-bottom: 20px; opacity: 0.9;">
+                AI Influence is continuously developed with community feedback. Join our communities for support, updates, and discussions!
+            </p>
+            
+            <div class="download-links">
+                <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3584621421" class="download-btn" target="_blank">Steam Workshop</a>
+                <a href="https://www.nexusmods.com/mountandblade2bannerlord/mods/9711" class="download-btn nexus-link" target="_blank">Nexus Mods</a>
+                <a href="https://discord.gg/aiinfluence" class="download-btn discord-link" target="_blank">Discord Support</a>
+                <a href="https://player2.game/" class="download-btn" target="_blank">Player2 Website</a>
+            </div>
+            
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2);">
+                <p><strong>Current Version:</strong> 3.3.7 • <strong>Last Updated:</strong> January 2026</p>
+                <p><strong>Compatibility:</strong> Mount & Blade II: Bannerlord v1.3.9 - 1.3.13</p>
+                <p><strong>Document Generated:</strong> <span id="current-date"></span></p>
+                <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
+                    This tutorial compendium is community-generated based on official documentation and community contributions.
+                    Always check official sources for latest information.
+                </p>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        // Set current date
+        document.addEventListener('DOMContentLoaded', function() {
+            const date = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('current-date').textContent = date.toLocaleDateString('en-US', options);
+            
+            // Simple language switcher (basic version)
+            const langButtons = document.querySelectorAll('.lang-btn');
+            langButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    langButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Simple alert for demo (full implementation would translate all content)
+                    if(this.textContent === 'RU') {
+                        alert('Russian translation would be implemented here. For full bilingual version, see the features page.');
+                    }
+                });
+            });
+            
+            // Smooth scrolling for TOC links
+            document.querySelectorAll('.toc a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 20,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
