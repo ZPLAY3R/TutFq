@@ -28,26 +28,42 @@
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             overflow: hidden;
-            border: 2px solid #8B4513;
+            border: 2px solid #3F2506;
         }
         
         header {
-            background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%);
+            background: linear-gradient(135deg, #231906 0%, #3E3018 100%);
             color: white;
-            padding: 40px;
+            padding: 0;
             text-align: center;
             position: relative;
-            border-bottom: 8px solid #D4AF37;
+            border-bottom: 8px solid #8C5F2C;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
         }
         
-        .header-image {
+        .header-banner {
             width: 100%;
-            max-width: 100%;
-            height: auto;
+            height: 400px;
+            object-fit: cover;
             display: block;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(35, 25, 6, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 40px;
         }
         
         .header-content h1 {
@@ -55,24 +71,27 @@
             font-size: 3.5em;
             margin-bottom: 10px;
             text-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+            color: white;
         }
         
         .header-content .subtitle {
             font-size: 1.5em;
             opacity: 0.9;
             font-weight: 300;
+            color: #f0f0f0;
         }
         
         .badge {
             position: absolute;
             top: 20px;
             right: 20px;
-            background: #D4AF37;
-            color: #2c3e50;
+            background: #8C5F2C;
+            color: #231906;
             padding: 8px 15px;
             border-radius: 20px;
             font-weight: bold;
             font-size: 0.9em;
+            z-index: 10;
         }
         
         .language-switcher {
@@ -81,6 +100,7 @@
             left: 20px;
             display: flex;
             gap: 10px;
+            z-index: 10;
         }
         
         .lang-btn {
@@ -99,14 +119,14 @@
         }
         
         .lang-btn.active {
-            background: #D4AF37;
-            color: #2c3e50;
-            border-color: #D4AF37;
+            background: #8C5F2C;
+            color: #231906;
+            border-color: #8C5F2C;
         }
         
         .divider {
             height: 4px;
-            background: linear-gradient(90deg, #8B4513, #D4AF37, #8B4513);
+            background: linear-gradient(90deg, #3F2506, #8C5F2C, #3F2506);
             margin: 10px 0;
         }
         
@@ -118,10 +138,10 @@
         .section-title {
             font-family: 'MedievalSharp', cursive;
             font-size: 2.2em;
-            color: #2c3e50;
+            color: #231906;
             margin-bottom: 25px;
             padding-bottom: 10px;
-            border-bottom: 3px solid #D4AF37;
+            border-bottom: 3px solid #8C5F2C;
             display: flex;
             align-items: center;
             gap: 15px;
@@ -131,7 +151,7 @@
             content: '';
             width: 10px;
             height: 40px;
-            background: #8B4513;
+            background: #5C4B28;
             border-radius: 2px;
         }
         
@@ -146,7 +166,7 @@
             background: #f8f9fa;
             border-radius: 10px;
             padding: 25px;
-            border-left: 5px solid #4a6491;
+            border-left: 5px solid #5C4B28;
             box-shadow: 0 4px 8px rgba(0,0,0,0.05);
             transition: transform 0.3s, box-shadow 0.3s;
         }
@@ -157,7 +177,7 @@
         }
         
         .feature-card h3 {
-            color: #2c3e50;
+            color: #231906;
             margin-bottom: 15px;
             font-size: 1.4em;
             display: flex;
@@ -170,12 +190,12 @@
             border-radius: 10px;
             padding: 25px;
             margin-bottom: 25px;
-            border-left: 5px solid #D4AF37;
+            border-left: 5px solid #8C5F2C;
             box-shadow: 0 4px 8px rgba(0,0,0,0.05);
         }
         
         .tutorial-card h3 {
-            color: #2c3e50;
+            color: #231906;
             margin-bottom: 15px;
             font-size: 1.4em;
             display: flex;
@@ -204,7 +224,7 @@
             margin: 15px 0;
             font-family: 'Courier New', monospace;
             white-space: pre-wrap;
-            border-left: 4px solid #D4AF37;
+            border-left: 4px solid #8C5F2C;
         }
         
         .faq-item {
@@ -212,12 +232,12 @@
             padding: 20px;
             background: #f8f9fa;
             border-radius: 10px;
-            border-left: 5px solid #4a6491;
+            border-left: 5px solid #5C4B28;
         }
         
         .faq-question {
             font-weight: bold;
-            color: #2c3e50;
+            color: #231906;
             margin-bottom: 10px;
             font-size: 1.2em;
         }
@@ -235,7 +255,7 @@
         
         .quote {
             background: #f0f7ff;
-            border-left: 5px solid #4a6491;
+            border-left: 5px solid #5C4B28;
             padding: 20px;
             margin: 20px 0;
             border-radius: 0 10px 10px 0;
@@ -263,11 +283,11 @@
         }
         
         footer {
-            background: #2c3e50;
+            background: #231906;
             color: white;
             padding: 30px;
             text-align: center;
-            border-top: 8px solid #D4AF37;
+            border-top: 8px solid #8C5F2C;
         }
         
         .download-links {
@@ -281,8 +301,8 @@
         .download-btn {
             display: inline-block;
             padding: 12px 25px;
-            background: #D4AF37;
-            color: #2c3e50;
+            background: #8C5F2C;
+            color: #231906;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
@@ -292,30 +312,30 @@
         
         .download-btn:hover {
             background: transparent;
-            color: #D4AF37;
-            border-color: #D4AF37;
+            color: #8C5F2C;
+            border-color: #8C5F2C;
         }
         
         .discord-link {
-            background: #7289DA;
+            background: #5C4B28;
             color: white;
         }
         
         .discord-link:hover {
             background: transparent;
-            color: #7289DA;
-            border-color: #7289DA;
+            color: #5C4B28;
+            border-color: #5C4B28;
         }
         
         .nexus-link {
-            background: #DA8B17;
+            background: #3E3018;
             color: white;
         }
         
         .nexus-link:hover {
             background: transparent;
-            color: #DA8B17;
-            border-color: #DA8B17;
+            color: #3E3018;
+            border-color: #3E3018;
         }
         
         @media print {
@@ -346,7 +366,7 @@
             transform: translate(-50%, -50%) rotate(-45deg);
             font-size: 120px;
             opacity: 0.03;
-            color: #8B4513;
+            color: #8C5F2C;
             pointer-events: none;
             font-family: 'MedievalSharp', cursive;
             white-space: nowrap;
@@ -357,11 +377,11 @@
             padding: 25px;
             border-radius: 10px;
             margin: 20px 0;
-            border: 2px solid #4a6491;
+            border: 2px solid #5C4B28;
         }
         
         .toc h3 {
-            color: #2c3e50;
+            color: #231906;
             margin-bottom: 15px;
             font-family: 'MedievalSharp', cursive;
         }
@@ -385,13 +405,13 @@
         }
         
         .toc a {
-            color: #4a6491;
+            color: #5C4B28;
             text-decoration: none;
             font-weight: 500;
         }
         
         .toc a:hover {
-            color: #D4AF37;
+            color: #8C5F2C;
             text-decoration: underline;
         }
     </style>
@@ -401,17 +421,20 @@
     
     <div class="container">
         <header>
-            <div class="language-switcher">
-                <button class="lang-btn active" onclick="changeLanguage('en')">EN</button>
-                <button class="lang-btn" onclick="changeLanguage('ru')">RU</button>
+            <img src="https://i.postimg.cc/vTsNJScj/Chat-GPT-Image-28-2025-13-03-01.png" alt="AI Influence Mod Banner" class="header-banner">
+            <div class="header-overlay">
+                <div class="language-switcher">
+                    <button class="lang-btn active" onclick="changeLanguage('en')">EN</button>
+                    <button class="lang-btn" onclick="changeLanguage('ru')">RU</button>
+                </div>
+                
+                <div class="header-content">
+                    <h1>AI INFLUENCE TUTORIALS</h1>
+                    <p class="subtitle">Mount & Blade II: Bannerlord — Complete Tutorials & FAQ Compendium</p>
+                    <p>Master the AI Influence Mod • From Beginner to Advanced Roleplay</p>
+                </div>
+                <div class="badge">v3.3.7 • Updated: January 2026</div>
             </div>
-            
-            <div class="header-content">
-                <h1>AI INFLUENCE TUTORIALS</h1>
-                <p class="subtitle">Mount & Blade II: Bannerlord — Complete Tutorials & FAQ Compendium</p>
-                <p>Master the AI Influence Mod • From Beginner to Advanced Roleplay</p>
-            </div>
-            <div class="badge">v3.3.7 • Updated: January 2026</div>
         </header>
         
         <!-- Table of Contents -->
@@ -1128,24 +1151,24 @@ Steam Path: Drive:\PathToSteamInstall\workshop\content\261550\3584621421
         </div>
         
         <footer>
-            <h2 style="font-family: 'MedievalSharp', cursive; margin-bottom: 20px;">Community & Support</h2>
-            <p style="margin-bottom: 20px; opacity: 0.9;">
+            <h2 style="font-family: 'MedievalSharp', cursive; margin-bottom: 20px; color: #f0f0f0;">Community & Support</h2>
+            <p style="margin-bottom: 20px; opacity: 0.9; color: #f0f0f0;">
                 AI Influence is continuously developed with community feedback. Join our communities for support, updates, and discussions!
             </p>
             
             <div class="download-links">
                 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3584621421" class="download-btn" target="_blank">Steam Workshop</a>
                 <a href="https://www.nexusmods.com/mountandblade2bannerlord/mods/9711" class="download-btn nexus-link" target="_blank">AI Influence on Nexus</a>
-                <a href="https://www.nexusmods.com/mountandblade2bannerlord/mods/9761" class="download-btn" style="background: #4CAF50; color: white;" target="_blank">ChatSync on Nexus</a>
+                <a href="https://www.nexusmods.com/mountandblade2bannerlord/mods/9761" class="download-btn" style="background: #5C4B28; color: white;" target="_blank">ChatSync on Nexus</a>
                 <a href="https://discord.gg/aiinfluence" class="download-btn discord-link" target="_blank">Discord Support</a>
                 <a href="https://player2.game/" class="download-btn" target="_blank">Player2 Website</a>
             </div>
             
             <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2);">
-                <p><strong>Current Version:</strong> 3.3.7 • <strong>Last Updated:</strong> January 2026</p>
-                <p><strong>Compatibility:</strong> Mount & Blade II: Bannerlord v1.3.9 - 1.3.13</p>
-                <p><strong>Document Generated:</strong> <span id="current-date"></span></p>
-                <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
+                <p><strong style="color: #f0f0f0;">Current Version:</strong> 3.3.7 • <strong style="color: #f0f0f0;">Last Updated:</strong> January 2026</p>
+                <p><strong style="color: #f0f0f0;">Compatibility:</strong> Mount & Blade II: Bannerlord v1.3.9 - 1.3.13</p>
+                <p><strong style="color: #f0f0f0;">Document Generated:</strong> <span id="current-date" style="color: #f0f0f0;"></span></p>
+                <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.8; color: #f0f0f0;">
                     This tutorial compendium is community-generated based on official documentation and community contributions.
                     Always check official sources for latest information.
                 </p>
@@ -1193,5 +1216,3 @@ Steam Path: Drive:\PathToSteamInstall\workshop\content\261550\3584621421
     </script>
 </body>
 </html>
-
-
