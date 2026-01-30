@@ -420,13 +420,14 @@
             <div class="toc">
                 <h3>Quick Navigation</h3>
                 <ul>
+                    <li><a href="#installation">Installation Guide</a></li>
                     <li><a href="#multi-npc">Multiple NPC Conversations</a></li>
+                    <li><a href="#chatsync">ChatSync Submod</a></li>
                     <li><a href="#deepseek-api">DeepSeek API Setup</a></li>
                     <li><a href="#asterisk-rp">Asterisk Roleplay Guide</a></li>
                     <li><a href="#tts-guide">Text-to-Speech (TTS)</a></li>
                     <li><a href="#rollback-ai">Rollback AI Actions</a></li>
                     <li><a href="#json-editing">Editing NPC .JSON Files</a></li>
-                    <li><a href="#installation">Installation Guide</a></li>
                     <li><a href="#faq">Frequently Asked Questions</a></li>
                     <li><a href="#troubleshooting">Troubleshooting</a></li>
                     <li><a href="#diplomacy">Diplomacy System</a></li>
@@ -435,6 +436,114 @@
         </div>
         
         <div class="divider"></div>
+        
+        <!-- Installation Guide -->
+        <div class="section" id="installation">
+            <h2 class="section-title"><span class="icon">📦</span> Installation Guide</h2>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">⚙️</span> How to Install AI Influence</h3>
+                
+                <div class="step">
+                    <strong>Step 1: Download Latest Version</strong>
+                    <p>Get the mod from:</p>
+                    <ul>
+                        <li><strong>Discord:</strong> ⁠🆙┃influence-updates channel</li>
+                        <li><strong>Steam Workshop:</strong> <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3584621421" target="_blank">Steam Link</a></li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <strong>Step 2: Extract to Modules Folder</strong>
+                    <div class="code-block">
+Mount & Blade II Bannerlord/Modules
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <strong>Step 3: Required Dependencies</strong>
+                    <ul>
+                        <li>Harmony</li>
+                        <li>ButterLib</li>
+                        <li>UIExtenderEx</li>
+                        <li>Mod Configuration Menu (MCM)</li>
+                    </ul>
+                    <div class="warning">
+                        <strong>⚠️ These mods must be ABOVE AIInfluence in load order!</strong>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <strong>Step 4: Load Order Example</strong>
+                    <div class="code-block">
+1) Harmony
+2) ButterLib
+3) UIExtenderEx
+4) MCM
+5) AIInfluence ✅
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <strong>Step 5: Supported Versions</strong>
+                    <p>Bannerlord 1.3.9 - 1.3.13</p>
+                </div>
+            </div>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">🆓</span> Free Local AI - Player2 Setup</h3>
+                
+                <div class="step">
+                    <strong>1. Download Player2:</strong>
+                    <p><a href="https://player2.game/" target="_blank">https://player2.game/</a></p>
+                </div>
+                
+                <div class="step">
+                    <strong>2. Run Player2.exe:</strong>
+                    <p>Local server starts automatically at: <code>http://localhost:4315/</code></p>
+                </div>
+                
+                <div class="step">
+                    <strong>3. Configure in Bannerlord:</strong>
+                    <p>MCM → AIInfluence → Settings:</p>
+                    <ul>
+                        <li>AI Backend: Player2</li>
+                        <li>URL: <code>http://localhost:4315/</code></li>
+                        <li>API Key: leave empty ✅</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">🌐</span> Other Supported AI Providers</h3>
+                
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3><span class="icon">⭐</span> OpenRouter</h3>
+                        <p>GPT-4, Claude, Gemini, etc.</p>
+                        <p><strong>✅ Best quality, requires API key</strong></p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3><span class="icon">💻</span> Ollama</h3>
+                        <p>Local LLMs</p>
+                        <p><strong>✅ Free & offline, supports many models</strong></p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3><span class="icon">🖥️</span> KoboldCpp</h3>
+                        <p>Local AI chat models</p>
+                        <p><strong>✅ Good for lower-end PCs</strong></p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <strong>How to Switch Models:</strong>
+                    <p>MCM → AI Backend → Select provider → Enter API URL and Key if required</p>
+                    <p class="success"><strong>Tip:</strong> Better AI models = smarter characters</p>
+                </div>
+            </div>
+        </div>
         
         <!-- Multiple NPC Conversations -->
         <div class="section" id="multi-npc">
@@ -493,6 +602,81 @@ Alternate one block per speaker, never merging them. Keep each character's voice
                 <div class="step">
                     <strong>6. Note on Usage:</strong>
                     <p>Generating larger responses to complicated prompts can use more tokens from Player2. Report any bugs encountered while using the dual-conversation rule.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ChatSync Submod -->
+        <div class="section" id="chatsync">
+            <h2 class="section-title"><span class="icon">🔄</span> ChatSync Submod</h2>
+            
+            <div class="tutorial-card">
+                <h3><span class="icon">🤝</span> Enhanced Multi-NPC Conversations with ChatSync</h3>
+                
+                <div class="step">
+                    <strong>What is ChatSync?</strong>
+                    <p>ChatSync is a submod for AI Influence that synchronizes conversations between selected NPCs. Once synced, characters share the same conversation context, making them aware of what has already been said and eliminating the need to repeat dialogue. This creates a true multi-NPC conversation experience instead of isolated one-on-one interactions.</p>
+                    <p><strong>Download:</strong> <a href="https://www.nexusmods.com/mountandblade2bannerlord/mods/9761" target="_blank">ChatSync on Nexus Mods</a></p>
+                </div>
+                
+                <div class="step">
+                    <strong>Key Features:</strong>
+                    <ul>
+                        <li>Select multiple NPCs to sync conversations</li>
+                        <li>AutoSync mode to keep dialogue context shared</li>
+                        <li>NPC search for quick selection</li>
+                        <li>Easy in-game UI with intuitive hotkeys</li>
+                        <li>Ideal for companions, advisors, rulers, and role-play focused gameplay</li>
+                        <li>Universal path detection for all installation types</li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <strong>How to Use ChatSync:</strong>
+                    <p><strong>Hotkeys:</strong></p>
+                    <ul>
+                        <li><strong>F8</strong> – Open/close ChatSync menu</li>
+                        <li><strong>F9</strong> – Toggle AutoSync ON/OFF instantly</li>
+                        <li><strong>F10</strong> - Show Diagnostics</li>
+                        <li><strong>F11</strong> - Manual Path Setup (if automatic detection fails)</li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <strong>Installation:</strong>
+                    <ol>
+                        <li>Download ChatSync from Nexus Mods</li>
+                        <li>Place the ChatSync folder in your Bannerlord Modules folder</li>
+                        <li>Ensure it loads after AI Influence in your load order</li>
+                        <li>Launch game and use F8 to open the ChatSync menu</li>
+                    </ol>
+                </div>
+                
+                <div class="step">
+                    <strong>Smart Path Detection:</strong>
+                    <p>ChatSync automatically searches for AI Influence in ALL possible locations:</p>
+                    <ul>
+                        <li>Steam Workshop installations (all drives and library folders)</li>
+                        <li>Different mod managers (Vortex, ModOrganizer2, manual installs)</li>
+                        <li>Custom installation paths on any drive (C:, D:, E:, etc.)</li>
+                        <li>Standard Bannerlord directories</li>
+                        <li>Windows user folders (Documents, AppData)</li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <strong>Troubleshooting:</strong>
+                    <p>If you encounter "NPC not found" issues:</p>
+                    <ol>
+                        <li>Press F10 to see diagnostics</li>
+                        <li>Check if AI Influence mod is found</li>
+                        <li>Press F11 to manually set the path if needed</li>
+                        <li>Enter the full path to your AI Influence save_data folder</li>
+                    </ol>
+                </div>
+                
+                <div class="success">
+                    <p><strong>✅ Tip:</strong> ChatSync greatly enhances immersion by allowing NPCs to have shared memory and context, making group conversations feel natural and dynamic!</p>
                 </div>
             </div>
         </div>
@@ -568,7 +752,7 @@ Alternate one block per speaker, never merging them. Keep each character's voice
                     <p><strong>Your Character:</strong> Wandering merchant/mercenary who served a Western Empire lord.</p>
                     
                     <div class="code-block">
-*I slowly walk by the side of road. I smile gently when approaching Korin's stall, then I slowly look at his wares* Well, I see you have pretty decent offer of nice wares *I'm gently touching one of the books that are displayed at stall, then I shift my focus back to Korin* I'm interested in some specific goods, and I heard that you may be the one who could provide them for me *I smile gently, a sun is lightly shining at the whole street when I come a few steps closer to the stall* I'm very interested in some old books from the region.
+"I slowly walk by the side of road. I smile gently when approaching Korin's stall, then I slowly look at his wares *Well, I see you have pretty decent offer of nice wares* I'm gently touching one of the books that are displayed at stall, then I shift my focus back to Korin *I'm interested in some specific goods, and I heard that you may be the one who could provide them for me* I smile gently, a sun is lightly shining at the whole street when I come a few steps closer to the stall *I'm very interested in some old books from the region.*"
                     </div>
                 </div>
                 
@@ -576,7 +760,7 @@ Alternate one block per speaker, never merging them. Keep each character's voice
                     <strong>4. Correcting AI Mistakes:</strong>
                     <p>When NPCs don't believe your words, use asterisk actions to provide context:</p>
                     <div class="code-block">
-*I nod gently then repeat myself* The words I have spoken are the honest truth, if you don't want to believe me, maybe you should ask your advisors *I slowly turn my head to the advisors of the king, and watch with smile on my face when they agree with my words* Now you see, that I did not lie to you.
+"I nod gently then repeat myself *The words I have spoken are the honest truth, if you don't want to believe me, maybe you should ask your advisors* I slowly turn my head to the advisors of the king, and watch with smile on my face when they agree with my words *Now you see, that I did not lie to you.*"
                     </div>
                 </div>
                 
@@ -601,9 +785,9 @@ Alternate one block per speaker, never merging them. Keep each character's voice
                 <div class="step">
                     <strong>7. Full Conversation Example:</strong>
                     <div class="code-block">
-*stops the procession of my leper knights, seeing the imperial banners in the distance. We step off the road, our armor slowly crunching as we move. I turn to Ragaea* Greetings, Empress, it is an honor to meet you on the road *I nod slightly with my deer-antlered helmet* I am Oskar of the Leper Knights.
+Player: *stops the procession of my leper knights, seeing the imperial banners in the distance. We step off the road, our armor slowly crunching as we move. I turn to Ragaea* Greetings, Empress, it is an honor to meet you on the road *I nod slightly with my deer-antlered helmet* I am Oskar of the Leper Knights.
 
-Ragaea: *raises my hand in greeting, slightly bowing my head, which causes the heavy jeweled crown to gently shift in my hair. My scale armor clinks softly as I move* Greetings, Oskar. I saw your banners on the road. Leper Knights... I have heard tales of your service to travelers. It is a noble occupation in these troubled times. *My eyes survey your group, assessing their discipline and weaponry* What brings you to this region? The road to Lartuzys is not the safest, especially when The Aseraeans are tearing at our southern borders.
+Ragaea: *I raise my hand in greeting, slightly bowing my head, which causes the heavy jeweled crown to gently shift in my hair. My scale armor clinks softly as I move* Greetings, Oskar. I saw your banners on the road. Leper Knights... I have heard tales of your service to travelers. It is a noble occupation in these troubled times. *My eyes survey your group, assessing their discipline and weaponry* What brings you to this region? The road to Lartuzys is not the safest, especially when The Aseraeans are tearing at our southern borders.
                     </div>
                 </div>
             </div>
@@ -801,114 +985,6 @@ Steam Path: Drive:\PathToSteamInstall\workshop\content\261550\3584621421
             </div>
         </div>
         
-        <!-- Installation Guide -->
-        <div class="section" id="installation">
-            <h2 class="section-title"><span class="icon">📦</span> Installation Guide</h2>
-            
-            <div class="tutorial-card">
-                <h3><span class="icon">⚙️</span> How to Install AI Influence</h3>
-                
-                <div class="step">
-                    <strong>Step 1: Download Latest Version</strong>
-                    <p>Get the mod from:</p>
-                    <ul>
-                        <li><strong>Discord:</strong> ⁠🆙┃influence-updates channel</li>
-                        <li><strong>Steam Workshop:</strong> <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3584621421" target="_blank">Steam Link</a></li>
-                    </ul>
-                </div>
-                
-                <div class="step">
-                    <strong>Step 2: Extract to Modules Folder</strong>
-                    <div class="code-block">
-Mount & Blade II Bannerlord/Modules
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <strong>Step 3: Required Dependencies</strong>
-                    <ul>
-                        <li>Harmony</li>
-                        <li>ButterLib</li>
-                        <li>UIExtenderEx</li>
-                        <li>Mod Configuration Menu (MCM)</li>
-                    </ul>
-                    <div class="warning">
-                        <strong>⚠️ These mods must be ABOVE AIInfluence in load order!</strong>
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <strong>Step 4: Load Order Example</strong>
-                    <div class="code-block">
-1) Harmony
-2) ButterLib
-3) UIExtenderEx
-4) MCM
-5) AIInfluence ✅
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <strong>Step 5: Supported Versions</strong>
-                    <p>Bannerlord 1.3.9 - 1.3.13</p>
-                </div>
-            </div>
-            
-            <div class="tutorial-card">
-                <h3><span class="icon">🆓</span> Free Local AI - Player2 Setup</h3>
-                
-                <div class="step">
-                    <strong>1. Download Player2:</strong>
-                    <p><a href="https://player2.game/" target="_blank">https://player2.game/</a></p>
-                </div>
-                
-                <div class="step">
-                    <strong>2. Run Player2.exe:</strong>
-                    <p>Local server starts automatically at: <code>http://localhost:4315/</code></p>
-                </div>
-                
-                <div class="step">
-                    <strong>3. Configure in Bannerlord:</strong>
-                    <p>MCM → AIInfluence → Settings:</p>
-                    <ul>
-                        <li>AI Backend: Player2</li>
-                        <li>URL: <code>http://localhost:4315/</code></li>
-                        <li>API Key: leave empty ✅</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="tutorial-card">
-                <h3><span class="icon">🌐</span> Other Supported AI Providers</h3>
-                
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <h3><span class="icon">⭐</span> OpenRouter</h3>
-                        <p>GPT-4, Claude, Gemini, etc.</p>
-                        <p><strong>✅ Best quality, requires API key</strong></p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <h3><span class="icon">💻</span> Ollama</h3>
-                        <p>Local LLMs</p>
-                        <p><strong>✅ Free & offline, supports many models</strong></p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <h3><span class="icon">🖥️</span> KoboldCpp</h3>
-                        <p>Local AI chat models</p>
-                        <p><strong>✅ Good for lower-end PCs</strong></p>
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <strong>How to Switch Models:</strong>
-                    <p>MCM → AI Backend → Select provider → Enter API URL and Key if required</p>
-                    <p class="success"><strong>Tip:</strong> Better AI models = smarter characters</p>
-                </div>
-            </div>
-        </div>
-        
         <!-- FAQ Section -->
         <div class="section" id="faq">
             <h2 class="section-title"><span class="icon">❓</span> Frequently Asked Questions</h2>
@@ -1058,7 +1134,8 @@ Mount & Blade II Bannerlord/Modules
             
             <div class="download-links">
                 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3584621421" class="download-btn" target="_blank">Steam Workshop</a>
-                <a href="https://www.nexusmods.com/mountandblade2bannerlord/mods/9711" class="download-btn nexus-link" target="_blank">Nexus Mods</a>
+                <a href="https://www.nexusmods.com/mountandblade2bannerlord/mods/9711" class="download-btn nexus-link" target="_blank">AI Influence on Nexus</a>
+                <a href="https://www.nexusmods.com/mountandblade2bannerlord/mods/9761" class="download-btn" style="background: #4CAF50; color: white;" target="_blank">ChatSync on Nexus</a>
                 <a href="https://discord.gg/aiinfluence" class="download-btn discord-link" target="_blank">Discord Support</a>
                 <a href="https://player2.game/" class="download-btn" target="_blank">Player2 Website</a>
             </div>
